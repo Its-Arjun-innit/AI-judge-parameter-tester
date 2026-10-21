@@ -14,7 +14,7 @@ python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt
 ```
 
-Set `ANTHROPIC_API_KEY`, `OPENAI_API_KEY` and `GEMINI_API_KEY` as environment variables; see `.env.example`. Keys are never read from files in the repository.
+Copy `.env.example` to `.env` and fill in `ANTHROPIC_API_KEY`, `OPENAI_API_KEY` and `GEMINI_API_KEY`. `.env` is gitignored and never committed; real environment variables override it.
 
 ## Use
 

@@ -1,14 +1,14 @@
-# Live smoke test: 1 case x 5 conditions x 3 models x 3 runs = 45 calls.
+# Stage B: 1 case x 5 conditions x 3 models x 2 runs = 30 calls. Prices and sources: see ping-01.yaml.
 experiment_id: smoke-01
 cases: [IN-THEFT-001]
-prompt_version: v1
+prompt_version: v2
 models:
-  - {key: claude, provider: anthropic, model: claude-sonnet-5-5, max_tokens: 8000, price_in: 2.0, price_out: 10.0}
-  - {key: gpt,    provider: openai,    model: TODO-openai-model-id, max_tokens: 8000}
-  - {key: gemini, provider: gemini,    model: TODO-gemini-model-id, max_tokens: 8000}
-runs: 3
+  - {key: claude, provider: anthropic, model: claude-haiku-5-5, thinking: false, rpm: 5, max_tokens: 1000, price_in: 0.10, price_out: 0.50}
+  - {key: gpt,    provider: openai,    model: gpt-5.4-nano-2026-03-17, effort: none, rpm: 5, max_tokens: 1000, price_in: 0.20, price_out: 1.25}
+  - {key: gemini, provider: gemini,    model: gemini-3.5-flash-lite, effort: minimal, rpm: 5, max_tokens: 1000, price_in: 0.30, price_out: 2.50}
+runs: 2
 seed: 1
-budget: {max_usd: 2, max_calls: 80}
+budget: {max_usd: 0.50, max_calls: 60}
 conditions:
   - {id: baseline}
   - {id: add_bank,    factor: presence,      level: added,   ops: [{add: E03}]}

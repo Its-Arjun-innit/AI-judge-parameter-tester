@@ -1,16 +1,17 @@
 # Pilot spec. Each condition differs from its `ref` in one evidence item (checked by `validate`).
-# Before a live run: replace the TODO model ids with current dated ids and fill in prices (USD per 1M tokens).
+# Lean design for free-tier budgets: 20 conditions x 3 models x 5 runs = 300 calls. Prices and sources: see ping-01.yaml.
+# Run the confirmatory conditions first (`run --condition X`); police_conf is exploratory.
 experiment_id: pilot-01
 cases: [IN-THEFT-001]
-prompt_version: v1
+prompt_version: v2
 models:
-  - {key: claude, provider: anthropic, model: claude-sonnet-5-5, max_tokens: 8000, price_in: 2.0, price_out: 10.0}
-  - {key: gpt,    provider: openai,    model: TODO-openai-model-id, max_tokens: 8000}
-  - {key: gemini, provider: gemini,    model: TODO-gemini-model-id, max_tokens: 8000}
-runs: 20
+  - {key: claude, provider: anthropic, model: claude-haiku-5-5, thinking: false, rpm: 5, max_tokens: 1000, price_in: 0.10, price_out: 0.50}
+  - {key: gpt,    provider: openai,    model: gpt-5.4-nano-2026-03-17, effort: none, rpm: 5, max_tokens: 1000, price_in: 0.20, price_out: 1.25}
+  - {key: gemini, provider: gemini,    model: gemini-3.5-flash-lite, effort: minimal, rpm: 5, max_tokens: 1000, price_in: 0.30, price_out: 2.50}
+runs: 5
 seed: 20261022
 order: randomize_within_side
-budget: {max_usd: 30, max_calls: 4000}
+budget: {max_usd: 2, max_calls: 450}
 conditions:
   - {id: baseline}
   # presence

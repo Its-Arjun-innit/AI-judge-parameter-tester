@@ -1,0 +1,14 @@
+# Stage C: calibration - baseline only x 3 models x 8 runs = 24 calls. Keep a case for the pilot
+# only if its baseline mean P is 30-70 for every model. Prices and sources: see ping-01.yaml.
+experiment_id: calib-01
+cases: [IN-THEFT-001]
+prompt_version: v2
+models:
+  - {key: claude, provider: anthropic, model: claude-haiku-5-5, thinking: false, rpm: 5, max_tokens: 1000, price_in: 0.10, price_out: 0.50}
+  - {key: gpt,    provider: openai,    model: gpt-5.4-nano-2026-03-17, effort: none, rpm: 5, max_tokens: 1000, price_in: 0.20, price_out: 1.25}
+  - {key: gemini, provider: gemini,    model: gemini-3.5-flash-lite, effort: minimal, rpm: 5, max_tokens: 1000, price_in: 0.30, price_out: 2.50}
+runs: 8
+seed: 7
+budget: {max_usd: 0.50, max_calls: 40}
+conditions:
+  - {id: baseline}

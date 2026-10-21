@@ -131,7 +131,9 @@ class ModelConfig(Strict):
     provider: Literal["anthropic", "openai", "gemini", "fake"]
     model: str
     temperature: float | None = None  # None = provider default (not sent)
-    effort: str | None = None         # anthropic output_config.effort / openai reasoning.effort
+    effort: str | None = None         # anthropic output_config.effort / openai reasoning.effort / gemini thinking_level
+    thinking: bool | None = None      # False = thinking off (anthropic) / budget 0 (gemini); None = provider default
+    rpm: float | None = None          # pace requests to stay under per-minute limits
     max_tokens: int = 8000
     price_in: float = 0.0             # USD per 1M input tokens - you maintain these
     price_out: float = 0.0            # USD per 1M output tokens

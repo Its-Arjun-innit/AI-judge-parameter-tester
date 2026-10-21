@@ -7,6 +7,7 @@
 """
 import json
 import random
+import threading
 import time
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from datetime import datetime, timezone
@@ -89,15 +90,37 @@ def _prompt(con, trial) -> Prompt:
     return p
 
 
+_pace_lock, _next_slot = threading.Lock(), {}
+QUOTA_WORDS = ("quota", "resource_exhausted")
+BILLING_WORDS = ("credit balance", "credits remaining", "insufficient_quota", "billing")
+
+
+def _pace(cfg):
+    """Reserve the model's next call slot so requests stay under cfg.rpm."""
+    if not cfg.rpm:
+        return
+    with _pace_lock:
+        slot = max(time.monotonic(), _next_slot.get(cfg.key, 0.0))
+        _next_slot[cfg.key] = slot + 60 / cfg.rpm
+    time.sleep(max(0.0, slot - time.monotonic()))
+
+
 def _work(cfg, prompt, schema):
+    """Returns (attempts, status): status is done | failed | quota (trial goes back to pending)."""
     attempts = []
     for n in range(1, MAX_ATTEMPTS + 1):
+        _pace(cfg)
         started = now()
         try:
             raw = call_model(cfg, prompt, schema)
         except ProviderError as e:
             attempts.append({"attempt_no": n, "started_at": started, "finished_at": now(), "error": str(e)[:2000],
-                             "http_status": e.status, "parse_status": "api_error"})
+                             "http_status": e.status, "parse_status": "api_error", "cost_usd": 0.0})
+            msg = str(e).lower()
+            billing = any(w in msg for w in BILLING_WORDS)  # no credit: retrying cannot help
+            quota = billing or e.status == 429 or any(w in msg for w in QUOTA_WORDS)
+            if quota and (billing or not e.retryable or n == MAX_ATTEMPTS):
+                return attempts, "quota"
             if not e.retryable or n == MAX_ATTEMPTS:
                 return attempts, "failed"
             time.sleep(2 ** n + random.random())
@@ -134,13 +157,14 @@ def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurr
     schema = response_schema()
     done = failed = 0
     stopped = None
+    blocked = set()  # models that hit a rate/quota limit this run; their trials stay pending
     cols = ["trial_id", "attempt_no", "started_at", "finished_at", "model_returned", "request_id", "http_status",
             "error", "raw_text", "input_tokens", "output_tokens", "stop_reason", "cost_usd", "parse_status",
             "probability", "verdict", "confidence", "key_evidence_json", "legal_standard", "reasoning",
             "missing_info_json", "parse_error"]
     # ponytail: budget is checked before each submit, so it can overshoot by up to `concurrency` calls
     with ThreadPoolExecutor(concurrency) as pool:
-        futures, it = {}, iter(pending)
+        futures, it, models_by_trial = {}, iter(pending), {}
         while True:
             while len(futures) < concurrency and stopped is None:
                 if spent >= cap_usd:
@@ -152,7 +176,10 @@ def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurr
                 t = next(it, None)
                 if t is None:
                     break
+                if t["model_key"] in blocked:
+                    continue
                 futures[pool.submit(_work, models[t["model_key"]], _prompt(con, t), schema)] = t["trial_id"]
+                models_by_trial[t["trial_id"]] = t["model_key"]
                 calls += 1
             if not futures:
                 break
@@ -166,11 +193,16 @@ def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurr
                                 [a.get(c) for c in cols])
                     spent += a.get("cost_usd") or 0
                 calls += len(attempts) - 1
+                if status == "quota":
+                    blocked.add(models_by_trial.pop(trial_id))
+                    status = "pending"  # retry on a later run; the failed attempts stay logged
+                models_by_trial.pop(trial_id, None)
                 con.execute("UPDATE trials SET status=? WHERE trial_id=?", (status, trial_id))
                 con.commit()
                 done += status == "done"
                 failed += status == "failed"
-                if (done + failed) % 25 == 0:
+                if done + failed and (done + failed) % 25 == 0:
                     log(f"  {done + failed}/{len(pending)} trials, ${spent:.2f} spent")
     return {"executed": done + failed, "done": done, "failed": failed,
-            "remaining": len(pending) - done - failed, "spent_usd": round(spent, 4), "stopped": stopped}
+            "remaining": len(pending) - done - failed, "spent_usd": round(spent, 4), "stopped": stopped,
+            "rate_limited_models": sorted(blocked)}

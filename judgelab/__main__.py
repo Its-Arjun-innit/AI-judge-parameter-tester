@@ -2,6 +2,7 @@
 so rehearsals can never mix with real data."""
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -14,7 +15,17 @@ from .db import connect
 from .schema import Experiment
 
 
+def load_env(path=ROOT / ".env"):
+    """KEY=VALUE lines from the gitignored .env; real environment variables win."""
+    if path.exists():
+        for line in path.read_text(encoding="utf-8").splitlines():
+            key, sep, value = line.partition("=")
+            if sep and not key.strip().startswith("#"):
+                os.environ.setdefault(key.strip(), value.strip())
+
+
 def main(argv=None):
+    load_env()
     ap = argparse.ArgumentParser(prog="python -m judgelab")
     ap.add_argument("--dry-run", action="store_true", help="fake model + data/dryrun.sqlite")
     ap.add_argument("--db", help="database path (default data/lab.sqlite)")

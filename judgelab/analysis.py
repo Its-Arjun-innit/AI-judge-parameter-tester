@@ -21,7 +21,7 @@ SELECT t.trial_id, t.experiment_id, t.case_id, t.case_hash, t.condition_id, c.re
 FROM trials t
 JOIN conditions c ON c.experiment_id = t.experiment_id AND c.condition_id = t.condition_id
 LEFT JOIN attempts a ON a.attempt_id =
-  (SELECT attempt_id FROM attempts WHERE trial_id = t.trial_id ORDER BY attempt_no DESC LIMIT 1)
+  (SELECT attempt_id FROM attempts WHERE trial_id = t.trial_id ORDER BY attempt_id DESC LIMIT 1)
 WHERE t.experiment_id = ?
 ORDER BY t.case_id, t.condition_id, t.model_key, t.run_index
 """
