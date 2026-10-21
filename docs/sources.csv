@@ -1,0 +1,48 @@
+key,citation,theme,relevance,status
+sun2025,"Sun, Zappalà, Di Maso, Pompedda, Nyman & Santtila (2025). Large language models (LLMs) as jurors. Law and Human Behavior 49(5):440-458. doi:10.1037/lhb0000620",llm_judges,"Closest prior work; LLM jurors vs humans; defendant/case factors",web-verified 2026-10-22
+bessis2026,"Bessis, Wills, Wojciechowski, White & Pothos (2026). Legal decision biases in GPT: a comparison with human judgment. Behavioral Sciences 16(3):437. doi:10.3390/bs16030437",llm_judges,"Evidence-order effects in GPT-4o/5.2; H5 is replication-extension",web-verified 2026-10-22
+posner2025,"Posner & Saran (2025). Judge AI: Assessing large language models in judicial decision-making. U. Chicago Coase-Sandor WP 25-03; SSRN 5098708",llm_judges,"GPT-4o follows precedent, ignores sympathy",web-verified 2026-10-22
+lfp2024,"Legal Fact Prediction: The missing piece in legal judgment prediction (2024). arXiv:2409.07055",llm_judges,"Reports last-presented-party bias",web-verified 2026-10-22 (authors to add)
+guha2023,"Guha et al. (2023). LegalBench. NeurIPS Datasets & Benchmarks",llm_legal,"Capability benchmark; not evidence weighting",from memory - confirm
+katz2024,"Katz, Bommarito, Gao & Arredondo (2024). GPT-4 passes the bar exam. Phil. Trans. R. Soc. A 382(2270):20230254. doi:10.1098/rsta.2023.0254",llm_legal,Capability,web-verified 2026-10-22
+dahl2024,"Dahl, Magesh, Suzgun & Ho (2024). Large legal fictions. Journal of Legal Analysis 16(1):64-93. doi:10.1093/jla/laae003",llm_legal,"Legal hallucination; relevant to BNS/BSA currency",web-verified 2026-10-22
+aletras2016,"Aletras, Tsarapatsanis, Preoţiuc-Pietro & Lampos (2016). Predicting judicial decisions of the ECtHR. PeerJ Computer Science 2:e93",judgment_prediction,Contrast: real-case prediction,from memory - confirm
+chalkidis2019,"Chalkidis, Androutsopoulos & Aletras (2019). Neural legal judgment prediction in English. ACL",judgment_prediction,Contrast,from memory - confirm
+malik2021,"Malik et al. (2021). ILDC for CJPE. ACL-IJCNLP 2021:4046-4062. doi:10.18653/v1/2021.acl-long.313",judgment_prediction,Indian SC judgment prediction,web-verified 2026-10-22
+joshi2024,"Joshi, Paul, Sharma, Goyal, Ghosh & Modi (2024). IL-TUR. ACL 2024:11460-11499. doi:10.18653/v1/2024.acl-long.618",judgment_prediction,Indian legal NLP benchmark,web-verified 2026-10-22
+kassin1997,"Kassin & Neumann (1997). On the power of confession evidence. Law and Human Behavior 21(5):469-484",human_evidence,"H1 prediction: confessions most potent",web-verified 2026-10-22
+hogarth1992,"Hogarth & Einhorn (1992). Order effects in belief updating: the belief-adjustment model. Cognitive Psychology 24(1):1-55",human_evidence,H5 theory,from memory - confirm
+pennington1992,"Pennington & Hastie (1992). Explaining the evidence: tests of the story model. JPSP 62(2):189-206",human_evidence,H3/H4 coherence,from memory - confirm
+wells1992,"Wells (1992). Naked statistical evidence of liability. JPSP 62(5):739-752",human_evidence,Statistical evidence,from memory - confirm
+thompson1987,"Thompson & Schumann (1987). Interpretation of statistical evidence in criminal trials. Law and Human Behavior 11(3):167-187",human_evidence,Statistical framing,from memory - confirm
+koehler2001,"Koehler (2001). When are people persuaded by DNA match statistics? Law and Human Behavior 25(5):493-513",human_evidence,"H2: frequency vs percentage framing",web-verified 2026-10-22 (title wording varies in citations - check)
+simon2004,"Simon (2004). A third view of the black box: cognitive coherence in legal decision making. U. Chicago Law Review 71(2):511-586",human_evidence,Coherence,from memory - confirm
+schum1994,"Schum (1994). The Evidential Foundations of Probabilistic Reasoning. Wiley",evidence_theory,Attribute taxonomy,from memory - confirm
+fenton2013,"Fenton, Neil & Lagnado (2013). A general structure for legal arguments about evidence using Bayesian networks. Cognitive Science 37(1):61-102. doi:10.1111/cogs.12004",evidence_theory,H3 normative benchmark,web-verified 2026-10-22
+sclar2024,"Sclar, Choi, Tsvetkov & Suhr (2024). Quantifying language models' sensitivity to spurious features in prompt design. ICLR 2024. arXiv:2310.11324",prompt_sensitivity,Template robustness,web-verified 2026-10-22
+lu2022,"Lu et al. (2022). Fantastically ordered prompts and where to find them. ACL",prompt_sensitivity,Order sensitivity,from memory - confirm
+pezeshkpour2024,"Pezeshkpour & Hruschka (2024). LLMs sensitivity to the order of options in multiple-choice questions. Findings of NAACL",prompt_sensitivity,Order sensitivity,from memory - confirm
+liu2024,"Liu et al. (2024). Lost in the middle. TACL 12",prompt_sensitivity,Position effects,from memory - confirm
+zheng2023,"Zheng et al. (2023). Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. NeurIPS D&B",prompt_sensitivity,Position bias,from memory - confirm
+atil2024,"Atil et al. (2024/2025). Non-determinism of 'deterministic' LLM settings. arXiv:2408.04667; Eval4NLP 2025",repeatability,H6,web-verified 2026-10-22
+ribeiro2020,"Ribeiro, Wu, Guestrin & Singh (2020). Beyond accuracy: behavioral testing of NLP models with CheckList. ACL",counterfactual,Minimal-pair testing,from memory - confirm
+kaushik2020,"Kaushik, Hovy & Lipton (2020). Learning the difference that makes a difference with counterfactually-augmented data. ICLR",counterfactual,Counterfactual design,from memory - confirm
+gardner2020,"Gardner et al. (2020). Evaluating models' local decision boundaries via contrast sets. Findings of EMNLP",counterfactual,Contrast sets,from memory - confirm
+tamkin2023,"Tamkin et al. (2023). Evaluating and mitigating discrimination in language model decisions. arXiv:2312.03689",counterfactual,Closest methodological template,web-verified 2026-10-22
+salinas2024,"Salinas, Haim & Nyarko (2024). What's in a name? Auditing large language models for race and gender bias. arXiv:2402.14875",bias,Follow-up study framing,web-verified 2026-10-22
+hofmann2024,"Hofmann, Kalluri, Jurafsky & King (2024). AI generates covertly racist decisions about people based on their dialect. Nature 633:147-154",bias,Conviction/death-sentence bias,web-verified 2026-10-22
+dressel2018,"Dressel & Farid (2018). The accuracy, fairness, and limits of predicting recidivism. Science Advances 4(1)",bias,Automated legal decisions,from memory - confirm
+turpin2023,"Turpin, Michael, Perez & Bowman (2023). Language models don't always say what they think. NeurIPS",faithfulness,Explanations are not weights,from memory - confirm
+kadavath2022,"Kadavath et al. (2022). Language models (mostly) know what they know. arXiv:2207.05221",calibration,Confidence is not calibrated probability,from memory - confirm
+xiong2024,"Xiong et al. (2024). Can LLMs express their uncertainty? ICLR",calibration,Verbalised confidence,from memory - confirm
+aher2023,"Aher, Arriaga & Kalai (2023). Using large language models to simulate multiple humans. ICML",simulated_subjects,Validity of silicon subjects,from memory - confirm
+binz2023,"Binz & Schulz (2023). Using cognitive psychology to understand GPT-3. PNAS 120(6)",simulated_subjects,Cognitive-bias testing of LLMs,from memory - confirm
+dillion2023,"Dillion, Tandon, Gu & Gray (2023). Can AI language models replace human participants? Trends in Cognitive Sciences 27(7)",simulated_subjects,Limits,from memory - confirm
+judd2012,"Judd, Westfall & Kenny (2012). Treating stimuli as a random factor in social psychology. JPSP 103(1):54-69",statistics,Cases as random factor,from memory - confirm
+westfall2014,"Westfall, Kenny & Judd (2014). Statistical power and optimal design ... samples of stimuli. JEP: General 143(5):2020-2045. doi:10.1037/xge0000014",statistics,Power ceiling: K not R,web-verified 2026-10-22
+barr2013,"Barr, Levy, Scheepers & Tily (2013). Random effects structure for confirmatory hypothesis testing. J. Memory and Language 68(3)",statistics,Random-effects structure,from memory - confirm
+lakens2017,"Lakens (2017). Equivalence tests. Social Psychological and Personality Science 8(4)",statistics,TOST for H2/nulls,from memory - confirm
+holm1979,"Holm (1979). A simple sequentially rejective multiple test procedure. Scand. J. Statistics 6(2)",statistics,Confirmatory multiplicity,from memory - confirm
+bh1995,"Benjamini & Hochberg (1995). Controlling the false discovery rate. JRSS-B 57(1)",statistics,Exploratory multiplicity,from memory - confirm
+sarda1984,"Sharad Birdhichand Sarda v. State of Maharashtra (1984) 4 SCC 116",indian_law,Circumstantial evidence five principles,user to verify
+khotkar2020,"Arjun Panditrao Khotkar v. Kailash Kushanrao Gorantyal (2020) 7 SCC 1",indian_law,Electronic-record certificate (IEA s.65B / BSA s.63),user to verify

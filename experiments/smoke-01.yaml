@@ -1,0 +1,17 @@
+# Live smoke test: 1 case x 5 conditions x 3 models x 3 runs = 45 calls.
+experiment_id: smoke-01
+cases: [IN-THEFT-001]
+prompt_version: v1
+models:
+  - {key: claude, provider: anthropic, model: claude-sonnet-5-5, max_tokens: 8000, price_in: 2.0, price_out: 10.0}
+  - {key: gpt,    provider: openai,    model: TODO-openai-model-id, max_tokens: 8000}
+  - {key: gemini, provider: gemini,    model: TODO-gemini-model-id, max_tokens: 8000}
+runs: 3
+seed: 1
+budget: {max_usd: 2, max_calls: 80}
+conditions:
+  - {id: baseline}
+  - {id: add_bank,    factor: presence,      level: added,   ops: [{add: E03}]}
+  - {id: rm_motive,   factor: presence,      level: removed, ops: [{remove: E04}]}
+  - {id: E01_formal,  factor: wording,       level: formal_register, ops: [{variant: {E01: formal}}]}
+  - {id: contra_cred, factor: contradiction, level: credible, ops: [{add: E09}]}
