@@ -10,7 +10,7 @@ from datetime import datetime
 import streamlit as st
 
 from judgelab import runner
-from judgelab.adapters import ollama_models, ollama_status
+from judgelab.adapters import ollama_models, ollama_show, ollama_status
 from judgelab.conditions import ConditionError, apply, expand
 from judgelab.schema import Budget, Condition, Experiment, ModelConfig
 from ui import common
@@ -242,6 +242,14 @@ else:
                      "num_ctx": d["num_ctx"], "max_tokens": d["max_tokens"], "timeout_s": d["timeout_s"]}
         if d["temperature"]:
             model_cfg["temperature"] = float(d["temperature"])
+        levels = ollama_show(pick).get("thinking") or []  # models that reason before answering
+        if levels:  # use the lowest level the model offers (fewer tokens), and leave room for the reasoning
+            model_cfg["thinking"] = False if False in levels else ("low" if "low" in levels else levels[0])
+            model_cfg["max_tokens"] = max(d["max_tokens"], 2000)
+            model_cfg["num_ctx"] = max(d["num_ctx"], 8192)
+            st.caption(f"This model reasons before answering. Reasoning is set to "
+                       f"{'off' if model_cfg['thinking'] is False else repr(model_cfg['thinking'])} "
+                       "(its lowest setting) to keep each analysis short; this is recorded with the results.")
         with st.expander("Generation settings"):
             st.write(f"Maximum response length {d['max_tokens']} tokens · context size {d['num_ctx']} tokens · "
                      f"time limit {d['timeout_s']} s per analysis · temperature "

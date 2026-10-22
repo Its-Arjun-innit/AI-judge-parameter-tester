@@ -169,10 +169,17 @@ def ollama_status() -> tuple[bool, str]:
         return False, str(e)
 
 
+def _is_remote(m: dict) -> bool:
+    """Ollama 'cloud' models (e.g. gpt-oss:20b-cloud) run on Ollama's servers, not on this computer."""
+    return bool(m.get("remote_host") or m.get("remote_model")) or str(m.get("name", "")).endswith("-cloud")
+
+
 def ollama_models() -> list[dict]:
-    """Installed models (never downloads anything)."""
+    """Models installed on this computer (never downloads anything; cloud-hosted entries are left out)."""
     out = []
     for m in _ollama_http("/api/tags", timeout=5).get("models", []):
+        if _is_remote(m):
+            continue
         d = m.get("details") or {}
         out.append({"name": m.get("name"), "size_gb": round((m.get("size") or 0) / 1e9, 1),
                     "parameters": d.get("parameter_size"), "quantization": d.get("quantization_level"),
@@ -193,6 +200,10 @@ def ollama_preflight(names: list[str]) -> dict:
     ok, info = ollama_status()
     if not ok:
         raise ProviderError(info)
+    cloud = [n for n in names if n.endswith("-cloud")]
+    if cloud:
+        raise ProviderError(f"{', '.join(cloud)} runs on Ollama's servers, not on this computer, so the case text "
+                            "would leave this computer. Choose a locally installed model.")
     installed = {m["name"]: m["digest"] for m in ollama_models()}
     missing = [n for n in names if n not in installed and f"{n}:latest" not in installed]
     if missing:

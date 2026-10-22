@@ -132,7 +132,8 @@ class ModelConfig(Strict):
     model: str
     temperature: float | None = None  # None = provider default (not sent)
     effort: str | None = None         # anthropic output_config.effort / openai reasoning.effort / gemini thinking_level
-    thinking: bool | None = None      # False = thinking off (anthropic) / budget 0 (gemini); None = provider default
+    thinking: bool | str | None = None  # False = off (anthropic, gemini budget 0, ollama); "low" etc. = ollama
+                                        # reasoning level for models that cannot turn it off (gpt-oss)
     rpm: float | None = None          # pace requests to stay under per-minute limits
     max_tokens: int = 8000
     num_ctx: int | None = None        # ollama: context size in tokens (recorded; prompt + answer must fit)

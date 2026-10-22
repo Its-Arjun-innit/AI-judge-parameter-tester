@@ -31,6 +31,12 @@ def test_quota_errors_leave_trials_pending_and_block_model(tmp_path, monkeypatch
     # billing errors are not retried: exactly one logged attempt per trial
     assert [r[0] for r in con.execute("SELECT COUNT(*) FROM attempts GROUP BY trial_id")] == [1, 1, 1]
 
+    def no_key(cfg, prompt, schema):  # a removed key pauses the model; it never fails the trials
+        raise ProviderError("TypeError: Could not resolve authentication method", status=None, retryable=False)
+    monkeypatch.setitem(adapters._CALL, "fake", no_key)
+    assert runner.run(con, "ping-01", dry_run=True, concurrency=1)["paused_models"] == ["claude", "gemini", "gpt"]
+    assert {r[0] for r in con.execute("SELECT status FROM trials")} == {"pending"}
+
     monkeypatch.setitem(adapters._CALL, "fake", adapters._fake)  # credit restored: resume completes
     assert runner.run(con, "ping-01", dry_run=True, concurrency=1)["done"] == 3
     assert runner.run(con, "ping-01", dry_run=True, concurrency=1)["executed"] == 0

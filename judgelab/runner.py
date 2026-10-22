@@ -95,6 +95,7 @@ def _prompt(con, trial) -> Prompt:
 _pace_lock, _next_slot = threading.Lock(), {}
 QUOTA_WORDS = ("quota", "resource_exhausted")
 BILLING_WORDS = ("credit balance", "credits remaining", "insufficient_quota", "billing")
+KEY_WORDS = ("api_key", "api key", "authentication method", "authentication_error", "invalid x-api-key")
 
 
 def _pace(cfg):
@@ -122,8 +123,9 @@ def _work(cfg, prompt, schema):
             msg = str(e).lower()
             billing = any(w in msg for w in BILLING_WORDS)  # no credit: retrying cannot help
             local_down = "ollama" in msg and ("not running" in msg or "not installed" in msg)
-            quota = billing or local_down or e.status == 429 or any(w in msg for w in QUOTA_WORDS)
-            if quota and (billing or local_down or not e.retryable or n == MAX_ATTEMPTS):
+            no_key = e.status == 401 or any(w in msg for w in KEY_WORDS)  # key removed or invalid: fixable
+            quota = billing or local_down or no_key or e.status == 429 or any(w in msg for w in QUOTA_WORDS)
+            if quota and (billing or local_down or no_key or not e.retryable or n == MAX_ATTEMPTS):
                 return attempts, "paused"
             if not e.retryable or n == MAX_ATTEMPTS:
                 return attempts, "failed"
@@ -178,10 +180,12 @@ def request_stop(db_path, experiment_id) -> None:
 
 
 def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurrency=None,
-        log=functools.partial(print, flush=True)) -> dict:
+        log=functools.partial(print, flush=True), model_key=None) -> dict:
+    """model_key: run only that model's analyses - on one PC this avoids reloading large local
+    models between analyses; the order of scenarios within the model stays randomised."""
     db_path = con.execute("PRAGMA database_list").fetchone()[2]
     if not db_path:  # in-memory database: no other process can share it, no lock needed
-        return _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, None)
+        return _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, None, model_key)
     lock, stop_file = run_files(db_path, experiment_id)
     try:  # atomic: two runners started at the same moment cannot both get the lock
         fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
@@ -195,21 +199,24 @@ def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurr
     os.close(fd)
     stop_file.unlink(missing_ok=True)
     try:
-        return _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, stop_file)
+        return _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, stop_file, model_key)
     finally:
         lock.unlink(missing_ok=True)
         stop_file.unlink(missing_ok=True)
 
 
-def _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, stop_file) -> dict:
+def _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, stop_file, model_key=None) -> dict:
     row = con.execute("SELECT spec_yaml FROM experiments WHERE experiment_id=?", (experiment_id,)).fetchone()
     if not row:
         raise ValueError(f"unknown experiment {experiment_id}; run `plan` first")
     exp = Experiment.model_validate(yaml.safe_load(row[0]))
+    if model_key and model_key not in {m.key for m in exp.models}:
+        raise ValueError(f"no model '{model_key}' in {experiment_id}; choose one of {[m.key for m in exp.models]}")
+    used = [m for m in exp.models if not model_key or m.key == model_key]
     models = {m.key: (m.model_copy(update={"provider": "fake"}) if dry_run else m) for m in exp.models}
-    local = sorted({m.model for m in exp.models if m.provider == "ollama"})
+    local = sorted({m.model for m in used if m.provider == "ollama"})
     if not dry_run:
-        bad = [m.key for m in exp.models if "TODO" in m.model]
+        bad = [m.key for m in used if "TODO" in m.model]
         if bad:
             raise ValueError(f"set real model ids for {bad} in the experiment spec before a live run")
         if local:
@@ -225,6 +232,9 @@ def _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, stop
     if condition:
         q += " AND condition_id=?"
         args.append(condition)
+    if model_key:
+        q += " AND model_key=?"
+        args.append(model_key)
     pending = con.execute(q + " ORDER BY schedule_pos", args).fetchall()
     schema = response_schema()
     done = failed = processed = 0

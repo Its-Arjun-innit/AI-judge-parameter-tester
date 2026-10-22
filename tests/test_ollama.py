@@ -116,6 +116,21 @@ def test_missing_model_stops_before_any_analysis(ollama, tmp_path):
     assert not ollama.received
 
 
+def test_ollama_cloud_models_are_refused(ollama, tmp_path):
+    ollama.models = ["qwen3:4b-instruct", "gpt-oss:20b-cloud"]  # '-cloud' runs on Ollama's servers
+    assert [m["name"] for m in adapters.ollama_models()] == ["qwen3:4b-instruct"]
+    con = planned(tmp_path, model="gpt-oss:20b-cloud")
+    with pytest.raises(ProviderError, match="not on this computer"):
+        runner.run(con, "local-test")
+    assert not ollama.received
+
+
+def test_reasoning_level_is_sent_for_gpt_oss(ollama, tmp_path):
+    ollama.models = ["gpt-oss:20b"]
+    runner.run(planned(tmp_path, runs=1, conditions=("baseline",), model="gpt-oss:20b", thinking="low"), "local-test")
+    assert ollama.received[0]["think"] == "low"
+
+
 def test_remote_address_refused_unless_allowed(monkeypatch):
     monkeypatch.setenv("OLLAMA_HOST", "http://example.com:11434")
     with pytest.raises(ProviderError, match="not on this computer"):
@@ -150,6 +165,13 @@ def test_malformed_truncated_and_context_overflow_are_recorded(ollama):
     for mode, status in [("malformed", "invalid_json"), ("length", "truncated"), ("overflow", "context_overflow")]:
         ollama.mode = mode
         assert parse(call_model(cfg, p, response_schema()), p.label_map)["parse_status"] == status
+
+
+def test_one_model_at_a_time(ollama, tmp_path):
+    con = planned(tmp_path)
+    with pytest.raises(ValueError, match="no model 'other'"):
+        runner.run(con, "local-test", model_key="other")
+    assert runner.run(con, "local-test", model_key="local")["done"] == 6
 
 
 def test_timeout_is_retried_then_recorded(ollama, tmp_path):

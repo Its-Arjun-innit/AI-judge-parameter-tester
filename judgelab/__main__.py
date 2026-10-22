@@ -38,6 +38,7 @@ def main(argv=None):
     s = sub.add_parser("run", help="execute pending trials")
     s.add_argument("experiment_id")
     s.add_argument("--condition")
+    s.add_argument("--model", help="run only this model's analyses (model key from the spec)")
     s.add_argument("--max-usd", type=float)
     s.add_argument("--concurrency", type=int, help="parallel analyses (default: 1 for local models, else 4)")
     s = sub.add_parser("export", help="write observations (+ all attempts) to results/<id>/")
@@ -61,8 +62,8 @@ def command(a, con):
     if a.cmd == "plan":
         print(json.dumps(runner.plan(con, a.spec), indent=2))
     elif a.cmd == "run":
-        print(json.dumps(runner.run(con, a.experiment_id, a.condition, a.max_usd, a.dry_run, a.concurrency),
-                         indent=2))
+        print(json.dumps(runner.run(con, a.experiment_id, a.condition, a.max_usd, a.dry_run, a.concurrency,
+                                    model_key=a.model), indent=2))
     elif a.cmd == "export":
         out = ROOT / "results" / a.experiment_id
         out.mkdir(parents=True, exist_ok=True)
