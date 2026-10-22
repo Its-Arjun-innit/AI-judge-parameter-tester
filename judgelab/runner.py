@@ -17,7 +17,8 @@ from pathlib import Path
 
 import yaml
 
-from .adapters import ProviderError, call_model, ollama_preflight
+from .adapters import OLLAMA_INFO, ProviderError, call_model, ollama_preflight
+from .records import ensure_prompts, environment
 from .cases import ROOT, Prompt, case_hash, load_case, render, sha256, template
 from .conditions import expand, presentation, trial_rng
 from .parse import parse
@@ -60,6 +61,7 @@ def plan(con, path) -> dict:
     keys = [(case, c.id, m, r) for case in cases for c in exp.conditions for m in exp.models
             for r in range(exp.runs)]
     random.Random(exp.seed).shuffle(keys)
+    ensure_prompts(con, exp.prompt_version)  # full instruction texts, kept even if the files change later
     system_hash = sha256(template("system", exp.prompt_version))
     new = est_usd = 0
     for pos, (case, cid, m, r) in enumerate(keys):
@@ -182,7 +184,27 @@ def request_stop(db_path, experiment_id) -> None:
 def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurrency=None,
         log=functools.partial(print, flush=True), model_key=None) -> dict:
     """model_key: run only that model's analyses - on one PC this avoids reloading large local
-    models between analyses; the order of scenarios within the model stays randomised."""
+    models between analyses; the order of scenarios within the model stays randomised.
+    Every call is recorded in the runs table: options, software versions and outcome."""
+    cur = con.execute("INSERT INTO runs (experiment_id, started_at, pid, options_json) VALUES (?,?,?,?)",
+                      (experiment_id, now(), os.getpid(), json.dumps(
+                          {"condition": condition, "model": model_key, "max_usd": max_usd, "dry_run": dry_run,
+                           "concurrency": concurrency})))
+    con.commit()
+    summary = {"error": "interrupted"}
+    try:
+        summary = _run_locked(con, experiment_id, condition, max_usd, dry_run, concurrency, log, model_key)
+        return summary
+    except Exception as e:
+        summary = {"error": f"{type(e).__name__}: {e}"}
+        raise
+    finally:
+        con.execute("UPDATE runs SET finished_at=?, environment_json=?, summary_json=? WHERE run_id=?",
+                    (now(), json.dumps(environment(OLLAMA_INFO["version"])), json.dumps(summary), cur.lastrowid))
+        con.commit()
+
+
+def _run_locked(con, experiment_id, condition, max_usd, dry_run, concurrency, log, model_key) -> dict:
     db_path = con.execute("PRAGMA database_list").fetchone()[2]
     if not db_path:  # in-memory database: no other process can share it, no lock needed
         return _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, None, model_key)

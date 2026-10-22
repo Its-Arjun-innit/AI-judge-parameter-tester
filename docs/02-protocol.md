@@ -101,3 +101,18 @@ Each attempt also stores `request_json` (the settings actually sent; never the p
 ## 7. Exclusions
 
 A trial is excluded only by setting `status='excluded'` with an `exclusion_reason`. Nothing is deleted, and every exclusion appears in the export.
+
+## 8. Permanent records
+
+- **The database refuses deletion.** Triggers in `judgelab/db.py` block deleting or rewriting cases, experiments, scenarios, trials, attempts, instruction texts and run sessions. Only two changes are possible:
+  - a trial's status moves forward;
+  - a completed analysis can only be marked `excluded`, and only with a reason.
+- **Instruction texts are kept.** At planning, the full text of the instructions given to the AI is stored by hash in a `prompts` table, so the record survives later edits to `prompts/*.md`.
+- **Run sessions are recorded.** Every run session is a row in `runs`, holding the options, the software environment (Python and package versions, the code commit, the Ollama version) and the outcome.
+- **After every real run** (not practice or dry runs), three copies are made:
+  1. a dated backup of the whole database in `data/backups/`, kept on this computer only;
+  2. a plain-file copy of the experiment in `records/<experiment_id>/`: the design, the case versions used, the instruction texts, every planned analysis and every attempt (including raw responses and errors), the run sessions, and the analysis view, plus `manifest.json` with SHA-256 checksums;
+  3. a git commit of that folder alone, which is then pushed to the project repository on GitHub.
+- **Keys are redacted.** Anything that looks like an API key is replaced with `[REDACTED-KEY]` before files are written.
+- **If publishing fails,** the run is not affected and the files stay on disk. `python -m judgelab records` re-exports and publishes on demand. Set `JUDGELAB_PUBLISH_RECORDS=0` to keep records local only.
+- **Public data:** the repository is public, so published records, including the AI's responses, are visible to anyone.

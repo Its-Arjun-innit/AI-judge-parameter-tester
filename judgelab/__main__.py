@@ -8,7 +8,7 @@ from pathlib import Path
 
 import yaml
 
-from . import analysis, runner
+from . import analysis, records, runner
 from .adapters import ProviderError
 from .cases import ROOT, load_case
 from .conditions import expand
@@ -46,11 +46,18 @@ def main(argv=None):
     s.add_argument("--format", choices=["csv", "json"], default="csv")
     s = sub.add_parser("analyze", help="print and save condition comparisons and consistency")
     s.add_argument("experiment_id")
+    s = sub.add_parser("records", help="back up the database and write/publish records/<id>/ (all experiments "
+                                       "if none given); runs do this automatically")
+    s.add_argument("experiment_ids", nargs="*")
+    s.add_argument("--no-publish", action="store_true", help="write the files but do not commit/push them")
     a = ap.parse_args(argv)
 
     if a.cmd == "validate":
         return validate(a.paths)
-    con = connect(a.db or ROOT / "data" / ("dryrun.sqlite" if a.dry_run else "lab.sqlite"))
+    a.db_file = Path(a.db) if a.db else ROOT / "data" / ("dryrun.sqlite" if a.dry_run else "lab.sqlite")
+    # permanent records are kept for real research data only (never for practice/dry runs)
+    a.research = not a.dry_run and a.db_file.resolve() == (ROOT / "data" / "lab.sqlite").resolve()
+    con = connect(a.db_file)
     try:
         return command(a, con)
     except (ValueError, RuntimeError, ProviderError) as e:  # plain message, no traceback
@@ -63,7 +70,18 @@ def command(a, con):
         print(json.dumps(runner.plan(con, a.spec), indent=2))
     elif a.cmd == "run":
         print(json.dumps(runner.run(con, a.experiment_id, a.condition, a.max_usd, a.dry_run, a.concurrency,
-                                    model_key=a.model), indent=2))
+                                    model_key=a.model), indent=2), flush=True)
+        if a.research:
+            records.after_run(con, a.db_file, [a.experiment_id], log=lambda m: print(m, flush=True))
+    elif a.cmd == "records":
+        if not a.research:
+            raise ValueError("records are kept for the real research database (data/lab.sqlite) only")
+        ids = a.experiment_ids or [r[0] for r in con.execute("SELECT DISTINCT experiment_id FROM trials ORDER BY 1")]
+        print(f"  backup: {records.backup(con, a.db_file).relative_to(ROOT)}")
+        for e in ids:
+            print(f"  records: {records.export(con, e).relative_to(ROOT)}")
+        if not a.no_publish:
+            print(f"  {records.publish(ids)}")
     elif a.cmd == "export":
         out = ROOT / "results" / a.experiment_id
         out.mkdir(parents=True, exist_ok=True)

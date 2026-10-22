@@ -47,3 +47,13 @@ It opens at http://localhost:8501 and is reachable from this computer only. To l
 | Tests | `python -m pytest tests` |
 
 Press Ctrl+C (or use **Stop** in the app) to stop after the current analysis; running the same command again continues where it stopped.
+
+## Records
+
+Research data is kept permanently: the database refuses to delete or rewrite records. After every real run, the app makes three copies:
+
+- a dated database backup in `data/backups/`;
+- plain files in [`records/`](records/) that can be read without this software;
+- a GitHub commit and push of those files.
+
+Re-create the records at any time with `python -m judgelab records`. See [protocol section 8](docs/02-protocol.md#8-permanent-records).
