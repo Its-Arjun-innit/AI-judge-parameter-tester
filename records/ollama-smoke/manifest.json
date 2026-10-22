@@ -1,0 +1,23 @@
+{
+  "experiment_id": "ollama-smoke",
+  "records_up_to": "2026-10-22T13:32:34.497371+00:00",
+  "counts": {
+    "conditions": 5,
+    "trials": 15,
+    "attempts": 15,
+    "runs": 0,
+    "observations": 15
+  },
+  "system_prompt_text_missing_for_hashes": [],
+  "sha256": {
+    "attempts.csv": "e6ce76bbc635b6f92cdd7726f64bf7f57191dfee7f8ce7b1b32a26f97b9d2f4e",
+    "cases/IN-THEFT-001-d75170f2aa07.json": "7f1accc916eb231b1c71edeec2f658091ac927ba60b4263ee0b9dc1244e6058d",
+    "conditions.csv": "c7c99b45f2321c53b73cb6694266d00468d364c242f3eded6503c4306500c82c",
+    "experiment.yaml": "8d4d542db82c5181894025d27fa4c630056b4e7721e2bf8b271b89fdfc1d7ca6",
+    "observations.csv": "7e277f1edc5923c38e918670c762b9f6b45bd489b4c504486a559ca0205d026c",
+    "prompts/system_v2-2133d1d29ab7.md": "2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82",
+    "prompts/user_v2-a1e6d31bde18.md": "a1e6d31bde189ddc6b0f6aaa9789d7658adf03fcfc54d194e122d14d0e6d8d6e",
+    "runs.csv": "a881dc651927b90a6e16cfe03e950f4612adee92a43ceb22527535ef451a2cc0",
+    "trials.csv": "d312f7b7dc1854427233cd7a3301cb0a8b3abdf0a8b41c83e0260faed3081a77"
+  }
+}

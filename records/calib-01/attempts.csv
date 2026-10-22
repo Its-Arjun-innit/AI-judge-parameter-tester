@@ -1,0 +1,196 @@
+attempt_id,trial_id,attempt_no,started_at,finished_at,model_returned,request_id,http_status,error,raw_text,input_tokens,output_tokens,stop_reason,cost_usd,parse_status,probability,verdict,confidence,key_evidence_json,legal_standard,reasoning,missing_info_json,parse_error,request_json,response_meta_json
+18,80,1,2026-10-21T20:37:27.019870+00:00,2026-10-21T20:37:30.737742+00:00,gemini-3.5-flash-lite,iSLZaoayKM_ZjuMPr9aSUQ,,,"{
+  ""reasoning"": ""The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the shop and PW-2 establishing a motive. However, the alibi witness (DW-1) raises a reasonable doubt, and the missing cash was never recovered. The circumstantial chain is incomplete and fails to exclude all hypotheses of innocence."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and in a case of circumstantial evidence, the circumstances must form a complete chain consistent only with the guilt of the accused."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-1"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""Recovery of the stolen money or fingerprint evidence at the scene"",
+    ""Independent verification of the accused's location during the alibi""
+  ],
+  ""probability_committed"": 55,
+  ""verdict"": ""acquit"",
+  ""confidence"": 5
+}",1032.0,285.0,end,0.0010221,valid,55.0,acquit,5.0,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""PW-2"", ""item_id"": ""E04"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and in a case of circumstantial evidence, the circumstances must form a complete chain consistent only with the guilt of the accused.","The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the shop and PW-2 establishing a motive. However, the alibi witness (DW-1) raises a reasonable doubt, and the missing cash was never recovered. The circumstantial chain is incomplete and fails to exclude all hypotheses of innocence.","[""Recovery of the stolen money or fingerprint evidence at the scene"", ""Independent verification of the accused's location during the alibi""]",,,
+19,79,1,2026-10-21T20:37:27.018087+00:00,2026-10-21T20:37:32.779512+00:00,,,400.0,"BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgG2RwPvCKiBDB154yUio'}",,,,,0.0,api_error,,,,,,,,,,
+20,82,1,2026-10-21T20:37:30.744073+00:00,2026-10-21T20:37:33.937780+00:00,,,429.0,"RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",,,,,0.0,api_error,,,,,,,,,,
+21,81,1,2026-10-21T20:37:39.020017+00:00,2026-10-21T20:37:41.408323+00:00,gemini-3.5-flash-lite,lCLZarncIObx4-EPn8SjwQ4,,,"{
+  ""reasoning"": ""The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the scene and PW-2 establishing a motive. However, the alibi witness DW-1 raises a reasonable doubt regarding presence. Without recovered stolen money or corroborative forensic evidence, the chain of circumstances is incomplete."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and where the case rests on circumstantial evidence, the circumstances must be fully established and form a complete chain consistent only with guilt."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-1"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""CCTV footage or certificate under BSA section 63"",
+    ""Recovery of any part of the stolen cash or fingerprints at the scene""
+  ],
+  ""probability_committed"": 55,
+  ""verdict"": ""acquit"",
+  ""confidence"": 5
+}",1032.0,282.0,end,0.0010145999999999998,valid,55.0,acquit,5.0,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""PW-2"", ""item_id"": ""E04"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and where the case rests on circumstantial evidence, the circumstances must be fully established and form a complete chain consistent only with guilt.","The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the scene and PW-2 establishing a motive. However, the alibi witness DW-1 raises a reasonable doubt regarding presence. Without recovered stolen money or corroborative forensic evidence, the chain of circumstances is incomplete.","[""CCTV footage or certificate under BSA section 63"", ""Recovery of any part of the stolen cash or fingerprints at the scene""]",,,
+22,84,1,2026-10-21T20:37:42.744185+00:00,2026-10-21T20:37:43.715400+00:00,,,429.0,"RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",,,,,0.0,api_error,,,,,,,,,,
+23,85,1,2026-10-21T20:37:51.020535+00:00,2026-10-21T20:37:53.699994+00:00,gemini-3.5-flash-lite,oCLZauXNJbjZ4-EPzOW4gQE,,,"{
+  ""reasoning"": ""The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the scene and PW-2 establishing motive. However, the alibi witness DW-1 raises a reasonable doubt regarding presence. Without recovered stolen money or forensic proof, the circumstantial chain is not completely inconsistent with innocence."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and where the case rests on circumstantial evidence, the circumstances must form a complete chain consistent only with the guilt of the accused."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-1"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""CCTV footage from the shop or street"",
+    ""Fingerprint or forensic analysis from the cash drawer""
+  ],
+  ""probability_committed"": 55,
+  ""verdict"": ""acquit"",
+  ""confidence"": 5
+}",1032.0,275.0,end,0.0009971,valid,55.0,acquit,5.0,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""PW-2"", ""item_id"": ""E04"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and where the case rests on circumstantial evidence, the circumstances must form a complete chain consistent only with the guilt of the accused.","The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the scene and PW-2 establishing motive. However, the alibi witness DW-1 raises a reasonable doubt regarding presence. Without recovered stolen money or forensic proof, the circumstantial chain is not completely inconsistent with innocence.","[""CCTV footage from the shop or street"", ""Fingerprint or forensic analysis from the cash drawer""]",,,
+24,86,1,2026-10-21T20:38:03.020310+00:00,2026-10-21T20:38:05.561089+00:00,gemini-3.5-flash-lite,rCLZaqvgDZr04-EPm4n14AE,,,"{
+  ""reasoning"": ""The prosecution relies on circumstantial evidence, specifically the testimony of PW-2 placing the accused near the shop and the prior employment giving access to the spare key. However, the alibi witness DW-1 raises a reasonable doubt regarding presence at the scene, and no stolen money or physical evidence was recovered. The chain of circumstances is incomplete."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and in circumstantial cases, the circumstances must form a complete chain consistent only with guilt."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""CCTV footage or electronic logs"",
+    ""Recovery of any part of the stolen cash""
+  ],
+  ""probability_committed"": 55,
+  ""verdict"": ""acquit"",
+  ""confidence"": 5
+}",1032.0,243.0,end,0.0009170999999999999,valid,55.0,acquit,5.0,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and in circumstantial cases, the circumstances must form a complete chain consistent only with guilt.","The prosecution relies on circumstantial evidence, specifically the testimony of PW-2 placing the accused near the shop and the prior employment giving access to the spare key. However, the alibi witness DW-1 raises a reasonable doubt regarding presence at the scene, and no stolen money or physical evidence was recovered. The chain of circumstances is incomplete.","[""CCTV footage or electronic logs"", ""Recovery of any part of the stolen cash""]",,,
+25,88,1,2026-10-21T20:38:15.020322+00:00,2026-10-21T20:38:17.427134+00:00,gemini-3.5-flash-lite,uCLZasrjJeL04-EPgp3cqAE,,,"{
+  ""reasoning"": ""The prosecution presented direct eyewitness testimony placing the accused at the scene using a key accessible to former staff, supported by a motive from a wage dispute. Although an alibi was raised by DW-1, PW-2's identification under a working streetlight is credible. The chain of circumstantial evidence points exclusively to the guilt of the accused beyond reasonable doubt."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and where the case rests on circumstantial evidence, the circumstances must form a complete and conclusive chain pointing only to the guilt of the accused."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""PW-1"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""CCTV footage from the shop or surrounding area"",
+    ""Fingerprint or forensic analysis from the cash drawer""
+  ],
+  ""probability_committed"": 80,
+  ""verdict"": ""convict"",
+  ""confidence"": 5
+}",1032.0,287.0,end,0.0010271,valid,80.0,convict,5.0,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""PW-1"", ""item_id"": ""E04"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and where the case rests on circumstantial evidence, the circumstances must form a complete and conclusive chain pointing only to the guilt of the accused.","The prosecution presented direct eyewitness testimony placing the accused at the scene using a key accessible to former staff, supported by a motive from a wage dispute. Although an alibi was raised by DW-1, PW-2's identification under a working streetlight is credible. The chain of circumstantial evidence points exclusively to the guilt of the accused beyond reasonable doubt.","[""CCTV footage from the shop or surrounding area"", ""Fingerprint or forensic analysis from the cash drawer""]",,,
+26,90,1,2026-10-21T20:38:27.020317+00:00,2026-10-21T20:38:29.115811+00:00,gemini-3.5-flash-lite,xCLZaqieHrfu4-EP3qengA0,,,"{
+  ""reasoning"": ""The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the shop and PW-2 establishing a motive. However, the defence presented alibi evidence via DW-1. The circumstantial chain is not fully watertight to exclude every reasonable hypothesis of innocence, leaving reasonable doubt."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and in a case of circumstantial evidence, the circumstances must form a complete chain consistent only with guilt."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-1"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""CCTV footage or technical evidence confirming presence"",
+    ""Recovery of any stolen currency from the accused""
+  ],
+  ""probability_committed"": 45,
+  ""verdict"": ""acquit"",
+  ""confidence"": 5
+}",1032.0,268.0,end,0.0009796,valid,45.0,acquit,5.0,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""PW-2"", ""item_id"": ""E04"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and in a case of circumstantial evidence, the circumstances must form a complete chain consistent only with guilt.","The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the shop and PW-2 establishing a motive. However, the defence presented alibi evidence via DW-1. The circumstantial chain is not fully watertight to exclude every reasonable hypothesis of innocence, leaving reasonable doubt.","[""CCTV footage or technical evidence confirming presence"", ""Recovery of any stolen currency from the accused""]",,,
+27,96,1,2026-10-21T20:38:39.020290+00:00,2026-10-21T20:38:40.966554+00:00,gemini-3.5-flash-lite,0CLZasWgDuf6juMP1J74kAE,,,"{
+  ""reasoning"": ""The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the shop and PW-2 establishing motive. However, the alibi witness DW-1 raises a reasonable doubt regarding presence. Without forensic recovery or CCTV evidence, the chain of circumstances is incomplete, entitling the accused to the benefit of doubt."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and where the evidence is circumstantial, the chain must be complete and inconsistent with any other reasonable hypothesis."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-1"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""CCTV footage with section 63 BSA certificate"",
+    ""Forensic evidence or fingerprint analysis at the scene""
+  ],
+  ""probability_committed"": 55,
+  ""verdict"": ""acquit"",
+  ""confidence"": 5
+}",1032.0,278.0,end,0.0010045999999999998,valid,55.0,acquit,5.0,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""PW-2"", ""item_id"": ""E04"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and where the evidence is circumstantial, the chain must be complete and inconsistent with any other reasonable hypothesis.","The prosecution relies on circumstantial evidence, specifically the testimony of PW-1 placing the accused at the shop and PW-2 establishing motive. However, the alibi witness DW-1 raises a reasonable doubt regarding presence. Without forensic recovery or CCTV evidence, the chain of circumstances is incomplete, entitling the accused to the benefit of doubt.","[""CCTV footage with section 63 BSA certificate"", ""Forensic evidence or fingerprint analysis at the scene""]",,,
+28,99,1,2026-10-21T20:38:51.020082+00:00,2026-10-21T20:38:52.832736+00:00,gemini-3.5-flash-lite,3CLZas-HD_vpjuMPs8C9qQ4,,,"{
+  ""reasoning"": ""The prosecution relied on circumstantial evidence, specifically identification by PW-2. However, the alibi witness DW-1 placed the accused 12 kilometres away during the material time. The unrecovered money and accessible spare key leave reasonable doubt regarding the intruder's identity and intent."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and in a case of circumstantial evidence, the circumstances must form a complete chain consistent only with guilt."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""CCTV footage from the vicinity of the shop"",
+    ""Forensic evidence such as fingerprints on the cash drawer""
+  ],
+  ""probability_committed"": 45,
+  ""verdict"": ""acquit"",
+  ""confidence"": 5
+}",1032.0,240.0,end,0.0009095999999999999,valid,45.0,acquit,5.0,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and in a case of circumstantial evidence, the circumstances must form a complete chain consistent only with guilt.","The prosecution relied on circumstantial evidence, specifically identification by PW-2. However, the alibi witness DW-1 placed the accused 12 kilometres away during the material time. The unrecovered money and accessible spare key leave reasonable doubt regarding the intruder's identity and intent.","[""CCTV footage from the vicinity of the shop"", ""Forensic evidence such as fingerprints on the cash drawer""]",,,

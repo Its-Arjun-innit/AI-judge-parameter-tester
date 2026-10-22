@@ -1,0 +1,340 @@
+attempt_id,trial_id,attempt_no,started_at,finished_at,model_returned,request_id,http_status,error,raw_text,input_tokens,output_tokens,stop_reason,cost_usd,parse_status,probability,verdict,confidence,key_evidence_json,legal_standard,reasoning,missing_info_json,parse_error,request_json,response_meta_json
+36,106,1,2026-10-22T13:28:35.042766+00:00,2026-10-22T13:28:52.145748+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 6,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-2""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the cash drawer on the night of 14 March 2025."",
+    ""Whether the side door was locked or monitored during the night.""
+  ],
+  ""probability_committed"": 65,
+  ""reasoning"": ""PW-1 saw the accused entering the shop after closing, DW-1 and DW-2 provide alibi timelines, but no CCTV or direct evidence confirms entry or dishonest intent. The alibi and eyewitness account conflict; reasonable doubt remains."",
+  ""verdict"": ""acquit""
+}",1094,234,end,0.0,valid,65,acquit,6,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E09"", ""bearing"": ""supports_acquittal""}, {""label"": ""DW-2"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-1 saw the accused entering the shop after closing, DW-1 and DW-2 provide alibi timelines, but no CCTV or direct evidence confirms entry or dishonest intent. The alibi and eyewitness account conflict; reasonable doubt remains.","[""Whether the accused had access to the cash drawer on the night of 14 March 2025."", ""Whether the side door was locked or monitored during the night.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 3616504718}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 15087649100, ""load_duration"": 4039100, ""prompt_eval_count"": 1094, ""prompt_eval_cached_count"": 799, ""eval_count"": 234, ""created_at"": ""2026-10-22T13:28:52.1435851Z""}"
+37,107,1,2026-10-22T13:28:52.151418+00:00,2026-10-22T13:29:08.497251+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the cash drawer on the night of 14 March 2025."",
+    ""The condition of the CCTV footage and whether it was recorded and certified under BSA section 63.""
+  ],
+  ""probability_committed"": 70,
+  ""reasoning"": ""PW-1 observed the accused entering the shop after hours, but DW-1 contradicts this with a timeline. The absence of CCTV footage undermines proof of entry. A reasonable doubt remains due to lack of direct evidence and access confirmation."",
+  ""verdict"": ""acquit""
+}",1032,213,end,0.0,valid,70,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-1 observed the accused entering the shop after hours, but DW-1 contradicts this with a timeline. The absence of CCTV footage undermines proof of entry. A reasonable doubt remains due to lack of direct evidence and access confirmation.","[""Whether the accused had access to the cash drawer on the night of 14 March 2025."", ""The condition of the CCTV footage and whether it was recorded and certified under BSA section 63.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 1157105792}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 14340798800, ""load_duration"": 4961800, ""prompt_eval_count"": 1032, ""prompt_eval_cached_count"": 983, ""eval_count"": 213, ""created_at"": ""2026-10-22T13:29:08.4955986Z""}"
+38,108,1,2026-10-22T13:29:08.502630+00:00,2026-10-22T13:29:25.918221+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-2""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the cash drawer at the time of the incident."",
+    ""Whether the side door was locked or monitored during the night.""
+  ],
+  ""probability_committed"": 60,
+  ""reasoning"": ""PW-1 saw the accused entering the shop at 22:30, but DW-1 and DW-2 provide plausible alibis. The chain of evidence is incomplete and inconsistent with a direct link to the theft. A reasonable doubt remains regarding the accused's presence and intent."",
+  ""verdict"": ""acquit""
+}",1094,232,end,0.0,valid,60,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E09"", ""bearing"": ""supports_acquittal""}, {""label"": ""DW-2"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-1 saw the accused entering the shop at 22:30, but DW-1 and DW-2 provide plausible alibis. The chain of evidence is incomplete and inconsistent with a direct link to the theft. A reasonable doubt remains regarding the accused's presence and intent.","[""Whether the accused had access to the cash drawer at the time of the incident."", ""Whether the side door was locked or monitored during the night.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 3049443961}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 15402581600, ""load_duration"": 5168600, ""prompt_eval_count"": 1094, ""prompt_eval_cached_count"": 983, ""eval_count"": 232, ""created_at"": ""2026-10-22T13:29:25.9172655Z""}"
+39,109,1,2026-10-22T13:29:25.923987+00:00,2026-10-22T13:29:42.963761+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the cash drawer during the night of 14 March 2025."",
+    ""Whether the side door was locked or accessible only to authorized staff.""
+  ],
+  ""probability_committed"": 70,
+  ""reasoning"": ""PW-1 observed the accused entering the shop at 22:30 on 14 March 2025, which supports guilt. DW-1 contradicts this with a statement of attendance at a family function. However, the timing and location of the event are not independently verified. The chain of evidence is incomplete."",
+  ""verdict"": ""acquit""
+}",1052,228,end,0.0,valid,70,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-1 observed the accused entering the shop at 22:30 on 14 March 2025, which supports guilt. DW-1 contradicts this with a statement of attendance at a family function. However, the timing and location of the event are not independently verified. The chain of evidence is incomplete.","[""Whether the accused had access to the cash drawer during the night of 14 March 2025."", ""Whether the side door was locked or accessible only to authorized staff.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 3839027650}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 15036551500, ""load_duration"": 5726900, ""prompt_eval_count"": 1052, ""prompt_eval_cached_count"": 799, ""eval_count"": 228, ""created_at"": ""2026-10-22T13:29:42.9628594Z""}"
+40,110,1,2026-10-22T13:29:42.970042+00:00,2026-10-22T13:29:58.899963+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-2""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    },
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""Ex.P-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the cash drawer on the night of 14 March 2025."",
+    ""Whether the side door was accessible only to the accused or others.""
+  ],
+  ""probability_committed"": 70,
+  ""reasoning"": ""PW-2 places the accused at the shop at 22:30, and Ex.P-1 shows a sudden cash deposit. DW-1 contradicts access but lacks corroboration. A reasonable doubt remains about intent and access."",
+  ""verdict"": ""acquit""
+}",1092,233,end,0.0,valid,70,acquit,5,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}, {""label"": ""Ex.P-1"", ""item_id"": ""E03"", ""bearing"": ""supports_conviction""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-2 places the accused at the shop at 22:30, and Ex.P-1 shows a sudden cash deposit. DW-1 contradicts access but lacks corroboration. A reasonable doubt remains about intent and access.","[""Whether the accused had access to the cash drawer on the night of 14 March 2025."", ""Whether the side door was accessible only to the accused or others.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 4123343038}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 13915344800, ""load_duration"": 4094000, ""prompt_eval_count"": 1092, ""prompt_eval_cached_count"": 800, ""eval_count"": 233, ""created_at"": ""2026-10-22T13:29:58.8990468Z""}"
+41,111,1,2026-10-22T13:29:58.905627+00:00,2026-10-22T13:30:14.226031+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""No CCTV footage or certificate under BSA section 63 is recorded or provided."",
+    ""No record of the accused's presence at the shop or time of entry/exit on the night of 14 March 2025.""
+  ],
+  ""probability_committed"": 30,
+  ""reasoning"": ""PW-1's evidence is circumstantial and contradicted by DW-1's alibi. No direct evidence or CCTV confirms the accused's presence. The alibi is plausible and not refuted. A reasonable doubt remains about the accused's involvement."",
+  ""verdict"": ""acquit""
+}",1052,225,end,0.0,valid,30,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_acquittal""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,PW-1's evidence is circumstantial and contradicted by DW-1's alibi. No direct evidence or CCTV confirms the accused's presence. The alibi is plausible and not refuted. A reasonable doubt remains about the accused's involvement.,"[""No CCTV footage or certificate under BSA section 63 is recorded or provided."", ""No record of the accused's presence at the shop or time of entry/exit on the night of 14 March 2025.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 2935287679}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 13292818600, ""load_duration"": 4912300, ""prompt_eval_count"": 1052, ""prompt_eval_cached_count"": 800, ""eval_count"": 225, ""created_at"": ""2026-10-22T13:30:14.2249875Z""}"
+42,112,1,2026-10-22T13:30:14.232500+00:00,2026-10-22T13:30:28.652235+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-2""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the shop on the night of 14 March 2025 after leaving the job"",
+    ""Whether the cash drawer was accessed by anyone else besides the accused""
+  ],
+  ""probability_committed"": 70,
+  ""reasoning"": ""PW-2 saw the accused at the shop on the night of 14 March 2025, but DW-1 contradicts this with a timeline. The absence of CCTV footage and no other evidence of access creates reasonable doubt about guilt."",
+  ""verdict"": ""acquit""
+}",1032,212,end,0.0,valid,70,acquit,5,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-2 saw the accused at the shop on the night of 14 March 2025, but DW-1 contradicts this with a timeline. The absence of CCTV footage and no other evidence of access creates reasonable doubt about guilt.","[""Whether the accused had access to the shop on the night of 14 March 2025 after leaving the job"", ""Whether the cash drawer was accessed by anyone else besides the accused""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 2612272105}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 12389466500, ""load_duration"": 3231300, ""prompt_eval_count"": 1032, ""prompt_eval_cached_count"": 800, ""eval_count"": 212, ""created_at"": ""2026-10-22T13:30:28.6509498Z""}"
+43,113,1,2026-10-22T13:30:28.657491+00:00,2026-10-22T13:30:43.200663+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused was present at the shop on the night of 14 March 2025"",
+    ""CCTV footage or other direct evidence of the cash drawer being accessed""
+  ],
+  ""probability_committed"": 40,
+  ""reasoning"": ""PW-1's testimony places the accused at the shop, but no direct evidence confirms entry or dishonest intent. DW-1's account contradicts PW-1's, and no CCTV or other corroborative evidence exists. A reasonable doubt remains about the accused's involvement."",
+  ""verdict"": ""acquit""
+}",979,217,end,0.0,valid,40,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_acquittal""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-1's testimony places the accused at the shop, but no direct evidence confirms entry or dishonest intent. DW-1's account contradicts PW-1's, and no CCTV or other corroborative evidence exists. A reasonable doubt remains about the accused's involvement.","[""Whether the accused was present at the shop on the night of 14 March 2025"", ""CCTV footage or other direct evidence of the cash drawer being accessed""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 3327911972}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 12535962000, ""load_duration"": 4988800, ""prompt_eval_count"": 979, ""prompt_eval_cached_count"": 799, ""eval_count"": 217, ""created_at"": ""2026-10-22T13:30:43.1989772Z""}"
+44,114,1,2026-10-22T13:30:43.206513+00:00,2026-10-22T13:30:57.815795+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the shop after 21:00 on 14 March 2025."",
+    ""The exact time the cash was taken or when the drawer was opened.""
+  ],
+  ""probability_committed"": 65,
+  ""reasoning"": ""PW-1 saw the accused at the shop on the night in question, but DW-1's alibi is plausible. The circumstantial chain is incomplete due to missing access and timing details. A reasonable doubt remains about the accused's presence and intent."",
+  ""verdict"": ""acquit""
+}",1032,213,end,0.0,valid,65,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-1 saw the accused at the shop on the night in question, but DW-1's alibi is plausible. The circumstantial chain is incomplete due to missing access and timing details. A reasonable doubt remains about the accused's presence and intent.","[""Whether the accused had access to the shop after 21:00 on 14 March 2025."", ""The exact time the cash was taken or when the drawer was opened.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 2034833902}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 12587145800, ""load_duration"": 4018900, ""prompt_eval_count"": 1032, ""prompt_eval_cached_count"": 871, ""eval_count"": 213, ""created_at"": ""2026-10-22T13:30:57.8149312Z""}"
+45,115,1,2026-10-22T13:30:57.821367+00:00,2026-10-22T13:31:15.067405+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-2""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    },
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""Ex.P-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the second key to the cash drawer before 14 March 2025."",
+    ""The exact time and nature of the argument between the accused and the complainant on 28 February 2025.""
+  ],
+  ""probability_committed"": 65,
+  ""reasoning"": ""PW-2's testimony places the accused at the shop on the night of 14 March 2025. Ex.P-1 shows a sudden cash deposit. DW-1 contradicts this. The chain is incomplete; access and intent remain unproven."",
+  ""verdict"": ""acquit""
+}",1092,250,end,0.0,valid,65,acquit,5,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}, {""label"": ""Ex.P-1"", ""item_id"": ""E03"", ""bearing"": ""supports_conviction""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,PW-2's testimony places the accused at the shop on the night of 14 March 2025. Ex.P-1 shows a sudden cash deposit. DW-1 contradicts this. The chain is incomplete; access and intent remain unproven.,"[""Whether the accused had access to the second key to the cash drawer before 14 March 2025."", ""The exact time and nature of the argument between the accused and the complainant on 28 February 2025.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 4011884172}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 15228401200, ""load_duration"": 7264900, ""prompt_eval_count"": 1092, ""prompt_eval_cached_count"": 799, ""eval_count"": 250, ""created_at"": ""2026-10-22T13:31:15.0664374Z""}"
+46,116,1,2026-10-22T13:31:15.072578+00:00,2026-10-22T13:31:31.471993+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-2""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-2""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the shop after 21:00 on 14 March 2025."",
+    ""The exact time the cash drawer was opened and whether the key was used.""
+  ],
+  ""probability_committed"": 60,
+  ""reasoning"": ""PW-2 saw the accused entering the shop at 22:30, but DW-1 and DW-2 provide a plausible alibi. The chain of circumstantial evidence is incomplete and inconsistent with guilt. A reasonable doubt remains about the accused's presence and intent."",
+  ""verdict"": ""acquit""
+}",1094,242,end,0.0,valid,60,acquit,5,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}, {""label"": ""DW-2"", ""item_id"": ""E09"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-2 saw the accused entering the shop at 22:30, but DW-1 and DW-2 provide a plausible alibi. The chain of circumstantial evidence is incomplete and inconsistent with guilt. A reasonable doubt remains about the accused's presence and intent.","[""Whether the accused had access to the shop after 21:00 on 14 March 2025."", ""The exact time the cash drawer was opened and whether the key was used.""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 15519367}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 14386058300, ""load_duration"": 4849200, ""prompt_eval_count"": 1094, ""prompt_eval_cached_count"": 924, ""eval_count"": 242, ""created_at"": ""2026-10-22T13:31:31.4710515Z""}"
+47,117,1,2026-10-22T13:31:31.477520+00:00,2026-10-22T13:31:46.536523+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and if a reasonable doubt remains, the accused must be acquitted."",
+  ""missing_information"": [
+    ""Whether the accused was present at the shop on 14 March 2025 at any time"",
+    ""Whether the cash drawer was accessed by anyone else besides the accused""
+  ],
+  ""probability_committed"": 40,
+  ""reasoning"": ""PW-1's testimony places the accused at the shop, but not at the time of the theft. DW-1 provides a plausible alibi. No direct evidence links the accused to the theft. A reasonable doubt remains about guilt."",
+  ""verdict"": ""acquit""
+}",979,220,end,0.0,valid,40,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_acquittal""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and if a reasonable doubt remains, the accused must be acquitted.","PW-1's testimony places the accused at the shop, but not at the time of the theft. DW-1 provides a plausible alibi. No direct evidence links the accused to the theft. A reasonable doubt remains about guilt.","[""Whether the accused was present at the shop on 14 March 2025 at any time"", ""Whether the cash drawer was accessed by anyone else besides the accused""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 1751110533}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 13052390500, ""load_duration"": 4364800, ""prompt_eval_count"": 979, ""prompt_eval_cached_count"": 799, ""eval_count"": 220, ""created_at"": ""2026-10-22T13:31:46.5351574Z""}"
+48,118,1,2026-10-22T13:31:46.544782+00:00,2026-10-22T13:32:02.600062+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""The time and manner of the cash drawer being accessed and opened"",
+    ""Whether the accused had access to the shop on the night of 14 March 2025""
+  ],
+  ""probability_committed"": 70,
+  ""reasoning"": ""PW-1 observed the accused entering the shop on the night of 14 March 2025, but DW-1 contradicts this with a plausible alibi. The absence of CCTV or timestamped records creates reasonable doubt about the accused's presence. The chain of evidence is incomplete."",
+  ""verdict"": ""acquit""
+}",1052,220,end,0.0,valid,70,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-1 observed the accused entering the shop on the night of 14 March 2025, but DW-1 contradicts this with a plausible alibi. The absence of CCTV or timestamped records creates reasonable doubt about the accused's presence. The chain of evidence is incomplete.","[""The time and manner of the cash drawer being accessed and opened"", ""Whether the accused had access to the shop on the night of 14 March 2025""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 2366587275}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 14037214400, ""load_duration"": 4951100, ""prompt_eval_count"": 1052, ""prompt_eval_cached_count"": 799, ""eval_count"": 220, ""created_at"": ""2026-10-22T13:32:02.5991662Z""}"
+49,119,1,2026-10-22T13:32:02.605048+00:00,2026-10-22T13:32:19.410224+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""PW-2""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    },
+    {
+      ""bearing"": ""supports_conviction"",
+      ""label"": ""Ex.P-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Exact time of entry and exit of the accused from the shop on 14 March 2025"",
+    ""Whether the accused had access to the second key at the time of the incident""
+  ],
+  ""probability_committed"": 70,
+  ""reasoning"": ""PW-2 saw the accused at the shop on the night in question, and Ex.P-1 shows a sudden deposit of Rs. 40,000. DW-1 contradicts this with a timeline, but no direct evidence confirms entry or intent. The chain of circumstantial evidence is incomplete and inconsistent."",
+  ""verdict"": ""acquit""
+}",1092,252,end,0.0,valid,70,acquit,5,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}, {""label"": ""Ex.P-1"", ""item_id"": ""E03"", ""bearing"": ""supports_conviction""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-2 saw the accused at the shop on the night in question, and Ex.P-1 shows a sudden deposit of Rs. 40,000. DW-1 contradicts this with a timeline, but no direct evidence confirms entry or intent. The chain of circumstantial evidence is incomplete and inconsistent.","[""Exact time of entry and exit of the accused from the shop on 14 March 2025"", ""Whether the accused had access to the second key at the time of the incident""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 2888659350}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 14792626800, ""load_duration"": 4082300, ""prompt_eval_count"": 1092, ""prompt_eval_cached_count"": 800, ""eval_count"": 252, ""created_at"": ""2026-10-22T13:32:19.4093405Z""}"
+50,120,1,2026-10-22T13:32:19.415287+00:00,2026-10-22T13:32:34.497371+00:00,qwen3:4b-instruct@0edcdef34593 (ollama 0.34.4),,,,"{
+  ""confidence"": 5,
+  ""key_evidence"": [
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""PW-1""
+    },
+    {
+      ""bearing"": ""supports_acquittal"",
+      ""label"": ""DW-1""
+    }
+  ],
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt."",
+  ""missing_information"": [
+    ""Whether the accused had access to the shop after 21:00 on 14 March 2025"",
+    ""The exact time the cash was removed from the drawer""
+  ],
+  ""probability_committed"": 30,
+  ""reasoning"": ""PW-1's testimony places the accused at the shop at 22:30, but no direct link to the theft exists. DW-1 provides a plausible alibi. The prosecution fails to prove dishonest intention or access beyond the shop door. No CCTV or other direct evidence exists."",
+  ""verdict"": ""acquit""
+}",979,224,end,0.0,valid,30,acquit,5,"[{""label"": ""PW-1"", ""item_id"": ""E01"", ""bearing"": ""supports_acquittal""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]",The prosecution must prove every element of the offence beyond reasonable doubt.,"PW-1's testimony places the accused at the shop at 22:30, but no direct link to the theft exists. DW-1 provides a plausible alibi. The prosecution fails to prove dishonest intention or access beyond the shop door. No CCTV or other direct evidence exists.","[""Whether the accused had access to the shop after 21:00 on 14 March 2025"", ""The exact time the cash was removed from the drawer""]",,"{""model"": ""qwen3:4b-instruct"", ""stream"": false, ""keep_alive"": ""10m"", ""options"": {""num_predict"": 600, ""num_ctx"": 4096, ""seed"": 174314985}, ""format"": ""response_schema""}","{""done_reason"": ""stop"", ""total_duration"": 13060478900, ""load_duration"": 3228600, ""prompt_eval_count"": 979, ""prompt_eval_cached_count"": 799, ""eval_count"": 224, ""created_at"": ""2026-10-22T13:32:34.4965526Z""}"

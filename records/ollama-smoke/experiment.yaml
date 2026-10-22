@@ -1,0 +1,15 @@
+# Local smoke test: 5 evidence scenarios x 3 repeats = 15 analyses on qwen3:4b-instruct (fits 4 GB GPU).
+experiment_id: ollama-smoke
+cases: [IN-THEFT-001]
+prompt_version: v2
+models:
+  - {key: qwen4b, provider: ollama, model: "qwen3:4b-instruct", num_ctx: 4096, max_tokens: 600}
+runs: 3
+seed: 12
+budget: {max_usd: 0, max_calls: 60}
+conditions:
+  - {id: baseline}
+  - {id: add_bank,    factor: presence,      level: added,   ops: [{add: E03}]}
+  - {id: rm_motive,   factor: presence,      level: removed, ops: [{remove: E04}]}
+  - {id: E01_formal,  factor: wording,       level: formal_register, ops: [{variant: {E01: formal}}]}
+  - {id: contra_cred, factor: contradiction, level: credible, ops: [{add: E09}]}

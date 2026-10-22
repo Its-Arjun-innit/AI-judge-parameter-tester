@@ -1,0 +1,11 @@
+# Local check: baseline x 3 repeats on a locally installed Ollama model. No cloud, no cost.
+experiment_id: ollama-ping
+cases: [IN-THEFT-001]
+prompt_version: v2
+models:
+  - {key: qwen4b, provider: ollama, model: "qwen3:4b-instruct", num_ctx: 4096, max_tokens: 600}
+runs: 3
+seed: 11
+budget: {max_usd: 0, max_calls: 20}
+conditions:
+  - {id: baseline}

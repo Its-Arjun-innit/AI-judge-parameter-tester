@@ -1,0 +1,6 @@
+experiment_id,condition_id,ref,factor,level,exploratory,ops_json
+smoke-01,E01_formal,baseline,wording,formal_register,0,"[{""variant"": {""E01"": ""formal""}}]"
+smoke-01,add_bank,baseline,presence,added,0,"[{""add"": ""E03""}]"
+smoke-01,baseline,baseline,baseline,baseline,0,[]
+smoke-01,contra_cred,baseline,contradiction,credible,0,"[{""add"": ""E09""}]"
+smoke-01,rm_motive,baseline,presence,removed,0,"[{""remove"": ""E04""}]"

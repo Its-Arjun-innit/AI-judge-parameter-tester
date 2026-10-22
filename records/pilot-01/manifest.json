@@ -1,0 +1,23 @@
+{
+  "experiment_id": "pilot-01",
+  "records_up_to": "2026-10-22T17:37:37.535747+00:00",
+  "counts": {
+    "conditions": 20,
+    "trials": 300,
+    "attempts": 324,
+    "runs": 0,
+    "observations": 300
+  },
+  "system_prompt_text_missing_for_hashes": [],
+  "sha256": {
+    "attempts.csv": "589a635b3aa2d57d07951be4891567fd2641be51262519e679efa793bbf6f953",
+    "cases/IN-THEFT-001-d75170f2aa07.json": "7f1accc916eb231b1c71edeec2f658091ac927ba60b4263ee0b9dc1244e6058d",
+    "conditions.csv": "ddf80ba9438cf07a04bafd20dad84f89355e5bc9a98f91f2d246e565e9748bd1",
+    "experiment.yaml": "4392ea0681365c4e0b43e2799f6e52b18d0696cf29adab54524beca19d359d4d",
+    "observations.csv": "72689ac4b8df8f11adaea3b5cb64ae2c55bb653fdd31f6fda5a4f11c40afcb35",
+    "prompts/system_v2-2133d1d29ab7.md": "2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82",
+    "prompts/user_v2-a1e6d31bde18.md": "a1e6d31bde189ddc6b0f6aaa9789d7658adf03fcfc54d194e122d14d0e6d8d6e",
+    "runs.csv": "a881dc651927b90a6e16cfe03e950f4612adee92a43ceb22527535ef451a2cc0",
+    "trials.csv": "11f3cb071fa79beef44ae18a35fc24e8640b439b4e0f98297b6fc922f78bd33c"
+  }
+}

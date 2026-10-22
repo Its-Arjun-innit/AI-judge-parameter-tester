@@ -1,0 +1,1033 @@
+trial_id,experiment_id,case_id,case_hash,condition_id,model_key,run_index,schedule_pos,evidence_order_json,label_map_json,prompt_version,system_hash,user_prompt,prompt_hash,params_json,status,exclusion_reason
+79,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,claude,5,0,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""claude"",""provider"":""anthropic"",""model"":""claude-haiku-5-5"",""temperature"":null,""effort"":null,""thinking"":false,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.1,""price_out"":0.5}",pending,
+80,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gemini,2,1,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gemini"",""provider"":""gemini"",""model"":""gemini-3.5-flash-lite"",""temperature"":null,""effort"":""minimal"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.3,""price_out"":2.5}",done,
+81,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gemini,6,2,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gemini"",""provider"":""gemini"",""model"":""gemini-3.5-flash-lite"",""temperature"":null,""effort"":""minimal"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.3,""price_out"":2.5}",done,
+82,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gpt,7,3,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gpt"",""provider"":""openai"",""model"":""gpt-5.4-nano-2026-03-17"",""temperature"":null,""effort"":""none"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.2,""price_out"":1.25}",pending,
+83,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,claude,7,4,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""claude"",""provider"":""anthropic"",""model"":""claude-haiku-5-5"",""temperature"":null,""effort"":null,""thinking"":false,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.1,""price_out"":0.5}",pending,
+84,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gpt,6,5,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gpt"",""provider"":""openai"",""model"":""gpt-5.4-nano-2026-03-17"",""temperature"":null,""effort"":""none"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.2,""price_out"":1.25}",pending,
+85,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gemini,7,6,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gemini"",""provider"":""gemini"",""model"":""gemini-3.5-flash-lite"",""temperature"":null,""effort"":""minimal"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.3,""price_out"":2.5}",done,
+86,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gemini,5,7,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""gemini"",""provider"":""gemini"",""model"":""gemini-3.5-flash-lite"",""temperature"":null,""effort"":""minimal"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.3,""price_out"":2.5}",done,
+87,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,claude,6,8,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""claude"",""provider"":""anthropic"",""model"":""claude-haiku-5-5"",""temperature"":null,""effort"":null,""thinking"":false,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.1,""price_out"":0.5}",pending,
+88,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gemini,3,9,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""gemini"",""provider"":""gemini"",""model"":""gemini-3.5-flash-lite"",""temperature"":null,""effort"":""minimal"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.3,""price_out"":2.5}",done,
+89,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gpt,5,10,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""gpt"",""provider"":""openai"",""model"":""gpt-5.4-nano-2026-03-17"",""temperature"":null,""effort"":""none"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.2,""price_out"":1.25}",pending,
+90,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gemini,0,11,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gemini"",""provider"":""gemini"",""model"":""gemini-3.5-flash-lite"",""temperature"":null,""effort"":""minimal"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.3,""price_out"":2.5}",done,
+91,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gpt,0,12,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gpt"",""provider"":""openai"",""model"":""gpt-5.4-nano-2026-03-17"",""temperature"":null,""effort"":""none"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.2,""price_out"":1.25}",pending,
+92,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,claude,0,13,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""claude"",""provider"":""anthropic"",""model"":""claude-haiku-5-5"",""temperature"":null,""effort"":null,""thinking"":false,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.1,""price_out"":0.5}",pending,
+93,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gpt,1,14,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gpt"",""provider"":""openai"",""model"":""gpt-5.4-nano-2026-03-17"",""temperature"":null,""effort"":""none"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.2,""price_out"":1.25}",pending,
+94,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gpt,3,15,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""gpt"",""provider"":""openai"",""model"":""gpt-5.4-nano-2026-03-17"",""temperature"":null,""effort"":""none"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.2,""price_out"":1.25}",pending,
+95,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,claude,3,16,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""claude"",""provider"":""anthropic"",""model"":""claude-haiku-5-5"",""temperature"":null,""effort"":null,""thinking"":false,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.1,""price_out"":0.5}",pending,
+96,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gemini,1,17,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gemini"",""provider"":""gemini"",""model"":""gemini-3.5-flash-lite"",""temperature"":null,""effort"":""minimal"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.3,""price_out"":2.5}",done,
+97,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,claude,2,18,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""claude"",""provider"":""anthropic"",""model"":""claude-haiku-5-5"",""temperature"":null,""effort"":null,""thinking"":false,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.1,""price_out"":0.5}",pending,
+98,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,claude,1,19,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""claude"",""provider"":""anthropic"",""model"":""claude-haiku-5-5"",""temperature"":null,""effort"":null,""thinking"":false,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.1,""price_out"":0.5}",pending,
+99,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gemini,4,20,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""gemini"",""provider"":""gemini"",""model"":""gemini-3.5-flash-lite"",""temperature"":null,""effort"":""minimal"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.3,""price_out"":2.5}",done,
+100,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gpt,4,21,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""gpt"",""provider"":""openai"",""model"":""gpt-5.4-nano-2026-03-17"",""temperature"":null,""effort"":""none"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.2,""price_out"":1.25}",pending,
+101,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,claude,4,22,"[[""E04"", ""base""], [""E01"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E04"", ""PW-2"": ""E01"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+PW-2: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",4c6e8364500c843393cf5e0d0ac7c694df1c35d3eedf3b32ee1f54b81711863f,"{""key"":""claude"",""provider"":""anthropic"",""model"":""claude-haiku-5-5"",""temperature"":null,""effort"":null,""thinking"":false,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.1,""price_out"":0.5}",pending,
+102,calib-01,IN-THEFT-001,d75170f2aa07c487f6875b354cb8a32ee66b35af3dc749dc12d517e3ff75ee6a,baseline,gpt,2,23,"[[""E01"", ""base""], [""E04"", ""base""], [""E06"", ""base""]]","{""PW-1"": ""E01"", ""PW-2"": ""E04"", ""DW-1"": ""E06""}",v2,2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82,"CASE RECORD (fictional)
+
+CHARGE: Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.
+
+LAW
+BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable
+property out of the possession of another person without that person's consent, they move that
+property in order to take it.
+BSA section 23 (summary): A confession made to a police officer, or made while in police custody
+other than in the immediate presence of a Magistrate, cannot be proved against the accused.
+BNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person
+that they are not bound to confess and after being satisfied that the confession is voluntary.
+BSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is
+accompanied by the certificate required by that section.
+
+STANDARD OF PROOF: The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.
+
+PRINCIPLES
+- The burden of proof rests on the prosecution throughout; the accused need not prove innocence.
+- Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.
+- The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care.
+
+UNDISPUTED FACTS
+- The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night.
+- Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key.
+- Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it.
+- The accused worked at the shop as a helper until 28 February 2025.
+- The money has not been recovered.
+
+FACTS IN ISSUE
+- Whether the accused entered the shop on the night of 14 March 2025.
+- Whether the accused took the cash with dishonest intention.
+
+PROSECUTION EVIDENCE
+PW-1: A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.
+
+PW-2: The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.
+
+ACCUSED'S STATEMENT (BNSS s.351): The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.
+
+DEFENCE EVIDENCE
+DW-1: The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.
+",e1777ad5f829c644bea0e2c52ba36e742a0cc181f92f3b63dfa498df751a3fa9,"{""key"":""gpt"",""provider"":""openai"",""model"":""gpt-5.4-nano-2026-03-17"",""temperature"":null,""effort"":""none"",""thinking"":null,""rpm"":5.0,""max_tokens"":1000,""price_in"":0.2,""price_out"":1.25}",pending,

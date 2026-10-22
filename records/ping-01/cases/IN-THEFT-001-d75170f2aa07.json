@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "case_id": "IN-THEFT-001",
+  "category": "property/theft",
+  "law": {
+    "offence": "Theft under section 303 of the Bharatiya Nyaya Sanhita, 2023, in respect of Rs. 85,000 in cash taken from the cash drawer of a hardware shop in Navapur town on the night of 14 March 2025.",
+    "provisions_text": "BNS section 303(1) (summary): A person commits theft if, intending to take dishonestly any movable\nproperty out of the possession of another person without that person's consent, they move that\nproperty in order to take it.\nBSA section 23 (summary): A confession made to a police officer, or made while in police custody\nother than in the immediate presence of a Magistrate, cannot be proved against the accused.\nBNSS section 183 (summary): A Judicial Magistrate may record a confession after warning the person\nthat they are not bound to confess and after being satisfied that the confession is voluntary.\nBSA section 63 (summary): An electronic record such as CCTV footage is admissible when it is\naccompanied by the certificate required by that section.\n",
+    "standard_of_proof": "The prosecution must prove every element of the offence beyond reasonable doubt. If a reasonable doubt remains, the accused is entitled to the benefit of that doubt and must be acquitted.",
+    "principles": [
+      "The burden of proof rests on the prosecution throughout; the accused need not prove innocence.",
+      "Where a case rests on circumstantial evidence, the circumstances must be fully established, must form a complete chain, and must be consistent only with the guilt of the accused and inconsistent with any other reasonable hypothesis.",
+      "The evidence of a related or interested witness is not to be rejected on that ground alone, but must be examined with care."
+    ]
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "text": "The complainant owns a hardware shop in Navapur town. The shop closes at 21:00 each night."
+    },
+    {
+      "id": "F2",
+      "text": "Between 21:00 on 14 March 2025 and 07:00 on 15 March 2025, Rs. 85,000 in cash was removed from the locked cash drawer of the shop. The drawer lock was not damaged; it was opened with a key."
+    },
+    {
+      "id": "F3",
+      "text": "Two keys to the cash drawer existed. The complainant kept one; the other hung on a hook in the storeroom, where staff could reach it."
+    },
+    {
+      "id": "F4",
+      "text": "The accused worked at the shop as a helper until 28 February 2025."
+    },
+    {
+      "id": "F5",
+      "text": "The money has not been recovered."
+    }
+  ],
+  "disputed_facts": [
+    {
+      "id": "D1",
+      "text": "Whether the accused entered the shop on the night of 14 March 2025."
+    },
+    {
+      "id": "D2",
+      "text": "Whether the accused took the cash with dishonest intention."
+    }
+  ],
+  "accused_statement": "The accused denied the allegations, stated that they did not go to the shop on 14 March 2025, and stated that they had been falsely implicated.",
+  "evidence": [
+    {
+      "id": "E01",
+      "side": "prosecution",
+      "kind": "witness",
+      "category": "eyewitness",
+      "target_fact": "D1",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working.",
+      "variants": {
+        "formal": {
+          "text": "The witness, who runs a tea stall situated opposite the shop, deposed that on 14.03.2025 at approximately 22:30 hours the witness observed the accused, known to the witness by sight as the erstwhile helper of the said shop, unlocking the side door of the shop and entering the premises for a duration of approximately ten minutes, and that the street light adjacent to the said side door was functional.",
+          "changes": {},
+          "presentation": "formal_register"
+        },
+        "low_reliability": {
+          "text": "A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw a person they believed to be the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The witness was about 40 metres away and the street light beside the side door was not working that night.",
+          "changes": {
+            "reliability": "low"
+          },
+          "presentation": null
+        },
+        "enmity": {
+          "text": "A tea-stall owner whose stall faces the shop testified that at about 22:30 on 14 March 2025 they saw the accused, whom they knew by sight as the shop's former helper, unlock the side door of the shop and go inside for about ten minutes. The street light beside the side door was working. In cross-examination the witness admitted that the accused owes them Rs. 5,000 and that they had quarrelled about the debt the week before.",
+          "changes": {
+            "potential_bias": "enmity"
+          },
+          "presentation": null
+        }
+      }
+    },
+    {
+      "id": "E04",
+      "side": "prosecution",
+      "kind": "witness",
+      "category": "circumstantial",
+      "target_fact": "D2",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "The complainant testified that the accused left the job on 28 February 2025 after an argument about Rs. 12,000 in wages that the accused said were owed and the complainant refused to pay.",
+      "variants": {}
+    },
+    {
+      "id": "E02",
+      "side": "prosecution",
+      "kind": "document",
+      "category": "electronic",
+      "target_fact": "D1",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [
+          "E01"
+        ],
+        "contradicts": []
+      },
+      "text": "CCTV footage from a camera on the building opposite the shop, produced with the certificate required under BSA section 63, shows a person of the accused's height and build entering the side door of the shop at 22:31 on 14 March 2025 and leaving at 22:41. The person's face is not clearly visible.",
+      "variants": {}
+    },
+    {
+      "id": "E08",
+      "side": "prosecution",
+      "kind": "witness",
+      "category": "eyewitness",
+      "target_fact": "D1",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "derived:E01",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [
+          "E01"
+        ],
+        "contradicts": []
+      },
+      "text": "The complainant's neighbour testified that on the morning of 15 March 2025 the tea-stall owner told them that they had seen the shop's former helper enter the shop the previous night.",
+      "variants": {}
+    },
+    {
+      "id": "E03",
+      "side": "prosecution",
+      "kind": "document",
+      "category": "documentary",
+      "target_fact": "D2",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "A bank passbook of the accused shows a cash deposit of Rs. 40,000 on 16 March 2025. Before that date the account balance had not exceeded Rs. 3,000 in the previous six months.",
+      "variants": {}
+    },
+    {
+      "id": "E05",
+      "side": "prosecution",
+      "kind": "document",
+      "category": "forensic",
+      "target_fact": "D1",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "A State Forensic Science Laboratory report states that a partial fingerprint lifted from the cash drawer handle matches the left thumb impression of the accused. The fingerprint examiner estimated that the chance of an unrelated person matching this partial print is 1 in 10,000.",
+      "variants": {
+        "percent": {
+          "text": "A State Forensic Science Laboratory report states that a partial fingerprint lifted from the cash drawer handle matches the left thumb impression of the accused. The fingerprint examiner estimated that the chance of an unrelated person matching this partial print is 0.01%.",
+          "changes": {},
+          "presentation": "percentage_format"
+        }
+      }
+    },
+    {
+      "id": "E10",
+      "side": "prosecution",
+      "kind": "witness",
+      "category": "procedural",
+      "target_fact": null,
+      "direction": "neutral",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "A clerk at the police station testified that a copy of the first information report was sent to the jurisdictional Magistrate on 15 March 2025.",
+      "variants": {}
+    },
+    {
+      "id": "E11",
+      "side": "prosecution",
+      "kind": "document",
+      "category": "electronic",
+      "target_fact": "D1",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "CCTV footage from a camera on the building opposite the shop, produced with the certificate required under BSA section 63, shows the accused unlocking the side door of the shop at about 22:30 on 14 March 2025 and going inside for about ten minutes. The footage is clear and the street light beside the side door was working.",
+      "variants": {}
+    },
+    {
+      "id": "E12",
+      "side": "prosecution",
+      "kind": "document",
+      "category": "confession",
+      "target_fact": "D1",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "A statement of the accused recorded by a Judicial Magistrate under BNSS section 183 records that the accused said they unlocked the side door of the shop at about 22:30 on 14 March 2025 and went inside for about ten minutes. The accused said nothing in that statement about the cash.",
+      "variants": {}
+    },
+    {
+      "id": "E13",
+      "side": "prosecution",
+      "kind": "witness",
+      "category": "confession",
+      "target_fact": "D2",
+      "direction": "inculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "inadmissible_heard",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "The investigating officer testified that while the accused was in police custody, the accused admitted to taking the money from the cash drawer. No Magistrate was present.",
+      "variants": {}
+    },
+    {
+      "id": "E06",
+      "side": "defence",
+      "kind": "witness",
+      "category": "eyewitness",
+      "target_fact": "D1",
+      "direction": "exculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "related",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": []
+      },
+      "text": "The accused's cousin testified that on 14 March 2025 the accused attended a family function in a village 12 kilometres from Navapur and stayed there until about 23:00.",
+      "variants": {}
+    },
+    {
+      "id": "E09",
+      "side": "defence",
+      "kind": "witness",
+      "category": "eyewitness",
+      "target_fact": "D1",
+      "direction": "exculpatory",
+      "attributes": {
+        "reliability": "high",
+        "independence": "independent",
+        "specificity": "specific",
+        "source_credibility": "neutral_official",
+        "admissibility": "admitted",
+        "potential_bias": "none"
+      },
+      "relations": {
+        "corroborates": [],
+        "contradicts": [
+          "E01"
+        ]
+      },
+      "text": "A bus conductor testified that the accused travelled on the last bus from that village on 14 March 2025, which left at 23:15 and reached Navapur at 23:45. The conductor produced the ticket-machine record for that journey.",
+      "variants": {
+        "interested": {
+          "text": "A bus conductor, who is a close friend of the accused, testified that the accused travelled on the last bus from that village on 14 March 2025, which left at 23:15 and reached Navapur at 23:45. The conductor produced the ticket-machine record for that journey.",
+          "changes": {
+            "source_credibility": "interested"
+          },
+          "presentation": null
+        }
+      }
+    }
+  ],
+  "baseline": [
+    "E01",
+    "E04",
+    "E06"
+  ],
+  "researcher_notes": {
+    "ground_truth_scenario": "Deliberately ambiguous: one identifying eyewitness and a motive, against an alibi from a relative.",
+    "intended_baseline": "ambiguous (target P 30-70 for every model; check in calibration mini-pilot)",
+    "legal_review": "TODO(you): verify every section number and replace each summary in provisions_text with your preferred wording or the verbatim text; confirm E12 (judicial admission of entry) and E13 (police-custody confession) are framed correctly; confirm the principles list."
+  }
+}

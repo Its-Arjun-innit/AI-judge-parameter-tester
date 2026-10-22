@@ -1,0 +1,6 @@
+experiment_id,condition_id,ref,factor,level,exploratory,ops_json
+ollama-smoke,E01_formal,baseline,wording,formal_register,0,"[{""variant"": {""E01"": ""formal""}}]"
+ollama-smoke,add_bank,baseline,presence,added,0,"[{""add"": ""E03""}]"
+ollama-smoke,baseline,baseline,baseline,baseline,0,[]
+ollama-smoke,contra_cred,baseline,contradiction,credible,0,"[{""add"": ""E09""}]"
+ollama-smoke,rm_motive,baseline,presence,removed,0,"[{""remove"": ""E04""}]"

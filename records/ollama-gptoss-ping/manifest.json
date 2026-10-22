@@ -1,0 +1,23 @@
+{
+  "experiment_id": "ollama-gptoss-ping",
+  "records_up_to": "2026-10-22T15:49:20.855817+00:00",
+  "counts": {
+    "conditions": 1,
+    "trials": 3,
+    "attempts": 3,
+    "runs": 0,
+    "observations": 3
+  },
+  "system_prompt_text_missing_for_hashes": [],
+  "sha256": {
+    "attempts.csv": "c5c90fa971fc46de025dc94307c8c311f96199be8d4d3afb06df3c003ce695bc",
+    "cases/IN-THEFT-001-d75170f2aa07.json": "7f1accc916eb231b1c71edeec2f658091ac927ba60b4263ee0b9dc1244e6058d",
+    "conditions.csv": "63a84189ee129eabb5d19f2ba6c212e2bee0a86d5b3ebe206bbebba8a7224cea",
+    "experiment.yaml": "22a4df77c41adaa0d4412ce463c5c3394c242195cff246646ae238f645dac039",
+    "observations.csv": "2efa10d20b583ff14e0a9fc0bdd0eb94fa9a0fb5bf04439af9591fed14e3a2f5",
+    "prompts/system_v2-2133d1d29ab7.md": "2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82",
+    "prompts/user_v2-a1e6d31bde18.md": "a1e6d31bde189ddc6b0f6aaa9789d7658adf03fcfc54d194e122d14d0e6d8d6e",
+    "runs.csv": "a881dc651927b90a6e16cfe03e950f4612adee92a43ceb22527535ef451a2cc0",
+    "trials.csv": "cc72e104a6e22fdc0336dc0581cc519bfefe8695d6affecf1b3be1e7f4caee0b"
+  }
+}

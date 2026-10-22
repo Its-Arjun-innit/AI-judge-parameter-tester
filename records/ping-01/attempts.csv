@@ -1,0 +1,30 @@
+attempt_id,trial_id,attempt_no,started_at,finished_at,model_returned,request_id,http_status,error,raw_text,input_tokens,output_tokens,stop_reason,cost_usd,parse_status,probability,verdict,confidence,key_evidence_json,legal_standard,reasoning,missing_info_json,parse_error,request_json,response_meta_json
+1,48,1,2026-10-21T20:33:18.991766+00:00,2026-10-21T20:33:23.135335+00:00,gemini-3.5-flash-lite,kSHZavTMNLPPjuMPvaPeiQE,,,"{
+  ""reasoning"": ""The prosecution established that the accused, a former employee familiar with the key location, was seen entering the shop after hours by PW-2. Although DW-1 provided an alibi, PW-2's identification under a working street light remains credible. The circumstantial evidence forms a complete chain pointing solely to the guilt of the accused."",
+  ""legal_standard_applied"": ""The prosecution must prove every element of the offence beyond reasonable doubt, and where the evidence is circumstantial, the circumstances must form a complete chain consistent only with guilt."",
+  ""key_evidence"": [
+    {
+      ""label"": ""PW-2"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""PW-1"",
+      ""bearing"": ""supports_conviction""
+    },
+    {
+      ""label"": ""DW-1"",
+      ""bearing"": ""supports_acquittal""
+    }
+  ],
+  ""missing_information"": [
+    ""CCTV footage or electronic logs of the shop"",
+    ""Recovery of any portion of the stolen cash""
+  ],
+  ""probability_committed"": 75,
+  ""verdict"": ""convict"",
+  ""confidence"": 5
+}",1032.0,275.0,end,0.0009971,valid,75.0,convict,5.0,"[{""label"": ""PW-2"", ""item_id"": ""E01"", ""bearing"": ""supports_conviction""}, {""label"": ""PW-1"", ""item_id"": ""E04"", ""bearing"": ""supports_conviction""}, {""label"": ""DW-1"", ""item_id"": ""E06"", ""bearing"": ""supports_acquittal""}]","The prosecution must prove every element of the offence beyond reasonable doubt, and where the evidence is circumstantial, the circumstances must form a complete chain consistent only with guilt.","The prosecution established that the accused, a former employee familiar with the key location, was seen entering the shop after hours by PW-2. Although DW-1 provided an alibi, PW-2's identification under a working street light remains credible. The circumstantial evidence forms a complete chain pointing solely to the guilt of the accused.","[""CCTV footage or electronic logs of the shop"", ""Recovery of any portion of the stolen cash""]",,,
+2,47,1,2026-10-21T20:33:59.061180+00:00,2026-10-21T20:34:08.369361+00:00,,,400.0,"BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgG2AsYpo7aArAx7TnE9Q'}",,,,,0.0,api_error,,,,,,,,,,
+3,46,1,2026-10-21T20:33:59.058147+00:00,2026-10-21T20:34:03.926192+00:00,,,429.0,"RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",,,,,0.0,api_error,,,,,,,,,,
+4,46,2,2026-10-21T20:34:11.058173+00:00,2026-10-21T20:34:12.025742+00:00,,,429.0,"RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",,,,,0.0,api_error,,,,,,,,,,
+5,46,3,2026-10-21T20:34:23.058206+00:00,2026-10-21T20:34:24.146810+00:00,,,429.0,"RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",,,,,0.0,api_error,,,,,,,,,,

@@ -1,0 +1,23 @@
+{
+  "experiment_id": "calib-01",
+  "records_up_to": "2026-10-21T20:38:52.832736+00:00",
+  "counts": {
+    "conditions": 1,
+    "trials": 24,
+    "attempts": 11,
+    "runs": 0,
+    "observations": 24
+  },
+  "system_prompt_text_missing_for_hashes": [],
+  "sha256": {
+    "attempts.csv": "5a5bb44bd0d9cafb3cad7556f2e629f96085695525c0c0e20ca36d930098d9fc",
+    "cases/IN-THEFT-001-d75170f2aa07.json": "7f1accc916eb231b1c71edeec2f658091ac927ba60b4263ee0b9dc1244e6058d",
+    "conditions.csv": "fcdb150c74cb33268c900d3eb31d0910d6094946fd1b6f26e488df9ba4b4ebe5",
+    "experiment.yaml": "f5724a65a7879d758d245e4a3cf3c855f2170a2bf5550de7c1e2a02a9bac2ee8",
+    "observations.csv": "543fa9901a9bdaa1ef8787b87d2a4052cceae2efd00d3bb4c676ed959626e2ab",
+    "prompts/system_v2-2133d1d29ab7.md": "2133d1d29ab7fb8b8b354ee572ee4e9040e7a3fea2310028f5fff68cf6b9bd82",
+    "prompts/user_v2-a1e6d31bde18.md": "a1e6d31bde189ddc6b0f6aaa9789d7658adf03fcfc54d194e122d14d0e6d8d6e",
+    "runs.csv": "a881dc651927b90a6e16cfe03e950f4612adee92a43ceb22527535ef451a2cc0",
+    "trials.csv": "0e130cf6e8ce9b1b1f4ab76e8bd9fbd851dcf176a066a2ec51d4673b737d64db"
+  }
+}
