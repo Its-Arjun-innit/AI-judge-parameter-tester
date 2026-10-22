@@ -5,7 +5,9 @@
   and are never re-asked (re-asking would resample exactly the failing conditions).
 - Resume = run again: only 'pending' trials are executed; UNIQUE keys stop duplicates.
 """
+import functools
 import json
+import os
 import random
 import threading
 import time
@@ -15,14 +17,14 @@ from pathlib import Path
 
 import yaml
 
-from .adapters import ProviderError, call_model
+from .adapters import ProviderError, call_model, ollama_preflight
 from .cases import ROOT, Prompt, case_hash, load_case, render, sha256, template
 from .conditions import expand, presentation, trial_rng
 from .parse import parse
 from .schema import Case, Experiment, response_schema
 
 MAX_ATTEMPTS = 3
-EST_OUTPUT_TOKENS = 1500  # ponytail: flat guess for estimates; replace with pilot means
+EST_OUTPUT_TOKENS = 400  # ponytail: flat guess for estimates (lean v2 prompt measured ~270); use pilot means
 
 
 def now():
@@ -106,7 +108,8 @@ def _pace(cfg):
 
 
 def _work(cfg, prompt, schema):
-    """Returns (attempts, status): status is done | failed | quota (trial goes back to pending)."""
+    """Returns (attempts, status): done | failed | paused (trial goes back to pending: rate/quota
+    limit, no credit, or the local Ollama service/model is unavailable)."""
     attempts = []
     for n in range(1, MAX_ATTEMPTS + 1):
         _pace(cfg)
@@ -118,9 +121,10 @@ def _work(cfg, prompt, schema):
                              "http_status": e.status, "parse_status": "api_error", "cost_usd": 0.0})
             msg = str(e).lower()
             billing = any(w in msg for w in BILLING_WORDS)  # no credit: retrying cannot help
-            quota = billing or e.status == 429 or any(w in msg for w in QUOTA_WORDS)
-            if quota and (billing or not e.retryable or n == MAX_ATTEMPTS):
-                return attempts, "quota"
+            local_down = "ollama" in msg and ("not running" in msg or "not installed" in msg)
+            quota = billing or local_down or e.status == 429 or any(w in msg for w in QUOTA_WORDS)
+            if quota and (billing or local_down or not e.retryable or n == MAX_ATTEMPTS):
+                return attempts, "paused"
             if not e.retryable or n == MAX_ATTEMPTS:
                 return attempts, "failed"
             time.sleep(2 ** n + random.random())
@@ -130,20 +134,88 @@ def _work(cfg, prompt, schema):
                          "model_returned": raw.model_returned, "request_id": raw.request_id,
                          "raw_text": raw.text, "input_tokens": raw.tokens_in, "output_tokens": raw.tokens_out,
                          "stop_reason": raw.stop_reason, "cost_usd": cost,
+                         "request_json": json.dumps(raw.request), "response_meta_json": json.dumps(raw.meta),
                          **parse(raw, prompt.label_map)})
         return attempts, "done"
 
 
-def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurrency=4, log=print) -> dict:
+def run_files(db_path, experiment_id) -> tuple[Path, Path]:
+    """(lock file holding the runner's PID, stop-request file) next to the database."""
+    p = Path(db_path)
+    return p.with_name(f"{p.stem}-run-{experiment_id}.lock"), p.with_name(f"{p.stem}-run-{experiment_id}.stop")
+
+
+def _pid_alive(pid: int) -> bool:
+    if os.name == "nt":  # os.kill(pid, 0) would terminate the process on Windows
+        import ctypes
+        k32 = ctypes.windll.kernel32
+        h = k32.OpenProcess(0x1000, False, pid)  # PROCESS_QUERY_LIMITED_INFORMATION
+        if not h:
+            return False
+        code = ctypes.c_ulong()
+        k32.GetExitCodeProcess(h, ctypes.byref(code))
+        k32.CloseHandle(h)
+        return code.value == 259  # STILL_ACTIVE
+    try:
+        os.kill(pid, 0)
+        return True
+    except OSError:
+        return False
+
+
+def running_pid(db_path, experiment_id) -> int | None:
+    """PID of a live runner for this experiment, or None (stale locks are ignored)."""
+    try:
+        pid = int(run_files(db_path, experiment_id)[0].read_text())
+    except (OSError, ValueError):
+        return None
+    return pid if _pid_alive(pid) else None
+
+
+def request_stop(db_path, experiment_id) -> None:
+    """Ask a running experiment to stop after the analyses already in progress."""
+    run_files(db_path, experiment_id)[1].write_text("stop")
+
+
+def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurrency=None,
+        log=functools.partial(print, flush=True)) -> dict:
+    db_path = con.execute("PRAGMA database_list").fetchone()[2]
+    if not db_path:  # in-memory database: no other process can share it, no lock needed
+        return _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, None)
+    lock, stop_file = run_files(db_path, experiment_id)
+    try:  # atomic: two runners started at the same moment cannot both get the lock
+        fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        pid = running_pid(db_path, experiment_id)
+        if pid:
+            raise RuntimeError(f"{experiment_id} is already running (process {pid}). Stop it before starting again.")
+        lock.unlink(missing_ok=True)  # stale lock left by a crashed run
+        fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    os.write(fd, str(os.getpid()).encode())
+    os.close(fd)
+    stop_file.unlink(missing_ok=True)
+    try:
+        return _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, stop_file)
+    finally:
+        lock.unlink(missing_ok=True)
+        stop_file.unlink(missing_ok=True)
+
+
+def _run(con, experiment_id, condition, max_usd, dry_run, concurrency, log, stop_file) -> dict:
     row = con.execute("SELECT spec_yaml FROM experiments WHERE experiment_id=?", (experiment_id,)).fetchone()
     if not row:
         raise ValueError(f"unknown experiment {experiment_id}; run `plan` first")
     exp = Experiment.model_validate(yaml.safe_load(row[0]))
     models = {m.key: (m.model_copy(update={"provider": "fake"}) if dry_run else m) for m in exp.models}
+    local = sorted({m.model for m in exp.models if m.provider == "ollama"})
     if not dry_run:
         bad = [m.key for m in exp.models if "TODO" in m.model]
         if bad:
             raise ValueError(f"set real model ids for {bad} in the experiment spec before a live run")
+        if local:
+            ollama_preflight(local)  # Ollama running + every model installed, before any analysis
+    if concurrency is None:  # one analysis at a time on a personal computer
+        concurrency = 1 if local and not dry_run else 4
     cap_usd = min(max_usd if max_usd is not None else float("inf"), exp.budget.max_usd)
     spent, calls = con.execute(
         "SELECT COALESCE(SUM(a.cost_usd),0), COUNT(*) FROM attempts a JOIN trials t USING (trial_id)"
@@ -155,20 +227,21 @@ def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurr
         args.append(condition)
     pending = con.execute(q + " ORDER BY schedule_pos", args).fetchall()
     schema = response_schema()
-    done = failed = 0
+    done = failed = processed = 0
     stopped = None
-    blocked = set()  # models that hit a rate/quota limit this run; their trials stay pending
+    blocked = set()  # models paused this run (limit, no credit, Ollama unavailable); their trials stay pending
     cols = ["trial_id", "attempt_no", "started_at", "finished_at", "model_returned", "request_id", "http_status",
             "error", "raw_text", "input_tokens", "output_tokens", "stop_reason", "cost_usd", "parse_status",
             "probability", "verdict", "confidence", "key_evidence_json", "legal_standard", "reasoning",
-            "missing_info_json", "parse_error"]
+            "missing_info_json", "parse_error", "request_json", "response_meta_json"]
+    t0 = time.monotonic()
     # ponytail: budget is checked before each submit, so it can overshoot by up to `concurrency` calls
     with ThreadPoolExecutor(concurrency) as pool:
         futures, it, models_by_trial = {}, iter(pending), {}
         while True:
             while len(futures) < concurrency and stopped is None:
-                if spent >= cap_usd:
-                    stopped = f"budget cap ${cap_usd:.2f} reached"
+                if stop_file and stop_file.exists():
+                    stopped = "stopped by the researcher"
                     break
                 if calls >= exp.budget.max_calls:
                     stopped = f"max_calls {exp.budget.max_calls} reached"
@@ -178,12 +251,25 @@ def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurr
                     break
                 if t["model_key"] in blocked:
                     continue
-                futures[pool.submit(_work, models[t["model_key"]], _prompt(con, t), schema)] = t["trial_id"]
+                m = models[t["model_key"]]
+                if spent >= cap_usd and (m.price_in or m.price_out):  # free local models never hit the cap
+                    stopped = f"budget cap ${cap_usd:.2f} reached"
+                    break
+                # a fixed seed per analysis: repeats differ, yet each one can be reproduced exactly
+                seed = int(sha256(f"{exp.seed}|{t['case_id']}|{t['condition_id']}|{t['model_key']}|"
+                                  f"{t['run_index']}")[:8], 16)
+                cfg = models[t["model_key"]].model_copy(update={"seed": seed})
+                futures[pool.submit(_work, cfg, _prompt(con, t), schema)] = t["trial_id"]
                 models_by_trial[t["trial_id"]] = t["model_key"]
                 calls += 1
             if not futures:
                 break
-            finished, _ = wait(futures, return_when=FIRST_COMPLETED)
+            try:
+                finished, _ = wait(futures, return_when=FIRST_COMPLETED)
+            except KeyboardInterrupt:  # Ctrl+C: submit nothing new; record analyses already running
+                stopped = "cancelled (Ctrl+C)"
+                log("  stopping after the analyses already in progress...")
+                continue
             for f in finished:
                 trial_id = futures.pop(f)
                 attempts, status = f.result()
@@ -193,16 +279,22 @@ def run(con, experiment_id, condition=None, max_usd=None, dry_run=False, concurr
                                 [a.get(c) for c in cols])
                     spent += a.get("cost_usd") or 0
                 calls += len(attempts) - 1
-                if status == "quota":
-                    blocked.add(models_by_trial.pop(trial_id))
+                if status == "paused":
+                    key = models_by_trial[trial_id]
+                    if key not in blocked:
+                        log(f"  paused {key}: {attempts[-1]['error'][:300]}")
+                    blocked.add(key)
                     status = "pending"  # retry on a later run; the failed attempts stay logged
                 models_by_trial.pop(trial_id, None)
                 con.execute("UPDATE trials SET status=? WHERE trial_id=?", (status, trial_id))
                 con.commit()
                 done += status == "done"
                 failed += status == "failed"
-                if done + failed and (done + failed) % 25 == 0:
-                    log(f"  {done + failed}/{len(pending)} trials, ${spent:.2f} spent")
+                processed += 1
+                el = time.monotonic() - t0
+                if el / processed > 1 or processed % 25 == 0:  # slow local models: report every analysis
+                    log(f"  {processed}/{len(pending)} analyses processed, {el:.0f}s elapsed, "
+                        f"about {el / processed * (len(pending) - processed):.0f}s left, ${spent:.2f} spent")
     return {"executed": done + failed, "done": done, "failed": failed,
             "remaining": len(pending) - done - failed, "spent_usd": round(spent, 4), "stopped": stopped,
-            "rate_limited_models": sorted(blocked)}
+            "paused_models": sorted(blocked)}

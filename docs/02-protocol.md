@@ -61,6 +61,16 @@ python -m judgelab run pilot-01 --max-usd 5
 - **Dry run.** `--dry-run` (placed before the subcommand) uses a fake model and the separate `data/dryrun.sqlite`, so a rehearsal can never mix with real data.
 - **Live-run guard.** A live run is refused while any model ID in the spec still contains `TODO`.
 
+## 4a. Local models (Ollama)
+
+- **Request.** Each analysis is one `POST /api/chat` to Ollama on this computer. It contains exactly two messages (instructions and case record), the same response schema as the cloud models (Ollama's `format` field), and `stream: false`. No history is carried between analyses.
+- **Address.** The address comes from `OLLAMA_HOST` (default `http://localhost:11434`). Addresses that aren't on this computer are refused unless `JUDGELAB_ALLOW_REMOTE_OLLAMA=1` is set. The web interface can't change the address, and the dashboard itself listens on localhost only.
+- **Pre-flight check.** Before any analysis, the runner checks that Ollama is running and that every model in the design is installed. It records each model's digest and the Ollama version, stored as `name@digest (ollama x.y.z)`. Models are never downloaded automatically.
+- **Seeds.** Each analysis gets its own seed, derived from (experiment seed, case, scenario, model, repeat). Repeats differ from one another, but each analysis can be reproduced exactly with the same model digest.
+- **Settings recorded.** `num_ctx` (context size) and `num_predict` (maximum response length) are recorded. If the case plus the answer reaches `num_ctx`, the result is recorded as `context_overflow`, because Ollama would otherwise silently drop the start of the case.
+- **Failures.** If Ollama stops or a model disappears mid-run, the affected trials go back to `pending` and that model is paused for the run; nothing is ever sent to a cloud provider instead. Timeouts (`timeout_s`, default 300 s) are retried up to 3 times.
+- **One at a time.** Local runs process one analysis at a time by default, and a lock file stops the same experiment running twice.
+
 ## 5. What is recorded
 
 See `judgelab/db.py`. One row per trial holds:
@@ -75,7 +85,9 @@ One row per attempt holds:
 - request ID, tokens, cost, stop reason and HTTP status/error;
 - the parse status and the parsed fields.
 
-Parse status is one of `valid`, `invalid_json`, `schema_violation`, `refusal`, `truncated` or `api_error`.
+Parse status is one of `valid`, `invalid_json`, `schema_violation`, `refusal`, `truncated`, `context_overflow` or `api_error`.
+
+Each attempt also stores `request_json` (the settings actually sent; never the prompt text) and `response_meta_json` (provider metrics, such as Ollama's timings). Both columns were added by an additive migration, so attempts made before it have NULL there.
 
 ## 6. Generation parameters
 

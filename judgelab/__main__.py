@@ -9,6 +9,7 @@ from pathlib import Path
 import yaml
 
 from . import analysis, runner
+from .adapters import ProviderError
 from .cases import ROOT, load_case
 from .conditions import expand
 from .db import connect
@@ -38,7 +39,7 @@ def main(argv=None):
     s.add_argument("experiment_id")
     s.add_argument("--condition")
     s.add_argument("--max-usd", type=float)
-    s.add_argument("--concurrency", type=int, default=4)
+    s.add_argument("--concurrency", type=int, help="parallel analyses (default: 1 for local models, else 4)")
     s = sub.add_parser("export", help="write observations (+ all attempts) to results/<id>/")
     s.add_argument("experiment_id")
     s.add_argument("--format", choices=["csv", "json"], default="csv")
@@ -49,6 +50,14 @@ def main(argv=None):
     if a.cmd == "validate":
         return validate(a.paths)
     con = connect(a.db or ROOT / "data" / ("dryrun.sqlite" if a.dry_run else "lab.sqlite"))
+    try:
+        return command(a, con)
+    except (ValueError, RuntimeError, ProviderError) as e:  # plain message, no traceback
+        print(f"Error: {e}", flush=True)
+        return 1
+
+
+def command(a, con):
     if a.cmd == "plan":
         print(json.dumps(runner.plan(con, a.spec), indent=2))
     elif a.cmd == "run":

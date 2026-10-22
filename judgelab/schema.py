@@ -128,13 +128,16 @@ class Condition(Strict):
 
 class ModelConfig(Strict):
     key: str
-    provider: Literal["anthropic", "openai", "gemini", "fake"]
+    provider: Literal["anthropic", "openai", "gemini", "ollama", "fake"]
     model: str
     temperature: float | None = None  # None = provider default (not sent)
     effort: str | None = None         # anthropic output_config.effort / openai reasoning.effort / gemini thinking_level
     thinking: bool | None = None      # False = thinking off (anthropic) / budget 0 (gemini); None = provider default
     rpm: float | None = None          # pace requests to stay under per-minute limits
     max_tokens: int = 8000
+    num_ctx: int | None = None        # ollama: context size in tokens (recorded; prompt + answer must fit)
+    timeout_s: float = 300            # ollama: per-analysis time limit (local models can be slow)
+    seed: int | None = None           # set per analysis by the runner for reproducible local runs
     price_in: float = 0.0             # USD per 1M input tokens - you maintain these
     price_out: float = 0.0            # USD per 1M output tokens
 

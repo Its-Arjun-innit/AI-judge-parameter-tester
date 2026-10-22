@@ -1,0 +1,7 @@
+[server]
+# Local only: the dashboard is not reachable from other computers.
+address = "localhost"
+headless = true
+
+[browser]
+gatherUsageStats = false

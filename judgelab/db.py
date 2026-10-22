@@ -30,9 +30,19 @@ CREATE TABLE IF NOT EXISTS attempts (
 """
 
 
-def connect(path) -> sqlite3.Connection:
+# Additive, idempotent migrations: existing rows keep NULL, nothing is rewritten.
+ADDED_COLUMNS = {"attempts": {"request_json": "TEXT", "response_meta_json": "TEXT"}}
+
+
+def connect(path, check_same_thread=True) -> sqlite3.Connection:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
-    con = sqlite3.connect(path)
+    con = sqlite3.connect(path, check_same_thread=check_same_thread)
     con.row_factory = sqlite3.Row
     con.executescript(DDL)
+    for table, cols in ADDED_COLUMNS.items():
+        have = {r[1] for r in con.execute(f"PRAGMA table_info({table})")}
+        for col, typ in cols.items():
+            if col not in have:
+                con.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
+    con.commit()
     return con

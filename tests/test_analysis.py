@@ -53,6 +53,12 @@ def test_recovers_synthetic_effect():
     assert 6 < cons.mean_sd_p < 10            # run-level SD was 8
 
 
+def test_baseline_only_experiment():
+    rows = [("c1", "m", "baseline", r, 50.0, "acquit") for r in range(3)]
+    ac = across_cases(compare(frame(rows)))
+    assert ac.empty and "k_cases" in ac.columns
+
+
 def test_null_effect_not_significant():
     rng = np.random.default_rng(3)
     rows = [(f"c{k}", "m", cond, r, float(rng.normal(50, 8)), "acquit")

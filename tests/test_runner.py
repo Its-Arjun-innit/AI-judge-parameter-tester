@@ -26,7 +26,7 @@ def test_quota_errors_leave_trials_pending_and_block_model(tmp_path, monkeypatch
         raise ProviderError("RateLimitError: 429 insufficient_quota", status=429, retryable=True)
     monkeypatch.setitem(adapters._CALL, "fake", no_credit)
     out = runner.run(con, "ping-01", dry_run=True, concurrency=1)
-    assert out["done"] == 0 and out["rate_limited_models"] == ["claude", "gemini", "gpt"]
+    assert out["done"] == 0 and out["paused_models"] == ["claude", "gemini", "gpt"]
     assert {r[0] for r in con.execute("SELECT status FROM trials")} == {"pending"}
     # billing errors are not retried: exactly one logged attempt per trial
     assert [r[0] for r in con.execute("SELECT COUNT(*) FROM attempts GROUP BY trial_id")] == [1, 1, 1]

@@ -101,7 +101,9 @@ def across_cases(cmp: pd.DataFrame, seed: int = 0, b: int = 5000) -> pd.DataFram
         rows.append({"model_key": model, "condition_id": cond, "factor": g.factor.iloc[0],
                      "level": g.level.iloc[0], "k_cases": k, "mean_delta_pp": d.mean(),
                      "ci_lo": lo, "ci_hi": hi, "p_signflip": p})
-    return pd.DataFrame(rows)
+    # keep the columns even with no deltas (e.g. a baseline-only experiment)
+    return pd.DataFrame(rows, columns=["model_key", "condition_id", "factor", "level", "k_cases",
+                                       "mean_delta_pp", "ci_lo", "ci_hi", "p_signflip"])
 
 
 def consistency(df: pd.DataFrame) -> pd.DataFrame:

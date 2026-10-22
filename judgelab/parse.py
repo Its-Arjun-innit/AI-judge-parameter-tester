@@ -12,6 +12,8 @@ def parse(raw: Raw, label_map: dict) -> dict:
     out = {"parse_status": "valid", "parse_error": None}
     if raw.stop_reason == "refusal":
         return out | {"parse_status": "refusal"}
+    if raw.stop_reason == "context_limit":  # part of the case may have been cut off: never treat as valid
+        return out | {"parse_status": "context_overflow"}
     try:
         data = json.loads(raw.text)
     except (json.JSONDecodeError, TypeError) as e:
